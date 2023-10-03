@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
     InputTextModule,
     PasswordModule,
     DividerModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ]
 })
