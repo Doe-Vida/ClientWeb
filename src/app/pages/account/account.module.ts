@@ -7,16 +7,20 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { FormsModule } from '@angular/forms';
+import { PrincipalComponent } from './pages/principal/principal.component';
 
 const routes: Routes = [
   {
     path: 'create', component: AccountCreateComponent
+  },{
+    path: 'principal', component: PrincipalComponent
   }
 ]
 
 @NgModule({
   declarations: [
-    AccountCreateComponent
+    AccountCreateComponent,
+    PrincipalComponent
   ],
   imports: [
     CommonModule,

@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./account-create.component.scss']
 })
 export class AccountCreateComponent {
-  value!: string;
 }
