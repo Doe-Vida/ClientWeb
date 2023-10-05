@@ -12,6 +12,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { LoginService } from './pages/shared/services/login/login.service';
 import { MessageService } from 'primeng/api';
+import { CreateAccountService } from './pages/shared/services/create-account/create-account.service';
 
 const routes: Routes = [
   {
@@ -43,6 +44,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],providers:[
     LoginService,
+    CreateAccountService,
     MessageService
   ]
 })
