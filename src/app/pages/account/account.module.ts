@@ -9,6 +9,7 @@ import { DividerModule } from 'primeng/divider';
 import { FormsModule } from '@angular/forms';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,8 @@ const routes: Routes = [
     path: 'principal', component: PrincipalComponent
   },{
     path: 'login', component: LoginComponent
+  },{
+    path: 'forgot-password', component: ForgotPasswordComponent
   }
 ]
 
@@ -24,7 +27,8 @@ const routes: Routes = [
   declarations: [
     AccountCreateComponent,
     PrincipalComponent,
-    LoginComponent
+    LoginComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     CommonModule,
