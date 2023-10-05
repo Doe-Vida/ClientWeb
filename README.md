@@ -1,27 +1,54 @@
-# ClientWeb
+# Doe Sangue - Salve Vidas 🩸
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+![Doe Sangue - Salve Vidas](./src/assets/create-account.png)
 
-## Development server
+Seja bem-vindo ao repositório da nossa aplicação "Doe Sangue - Salve Vidas". Nossa missão é incentivar a doação de sangue e ajudar a salvar vidas. Este repositório contém o código-fonte da nossa aplicação e recursos relacionados.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Sobre a Aplicação
 
-## Code scaffolding
+**Doe Sangue - Salve Vidas** é uma plataforma dedicada a facilitar o processo de doação de sangue, conectando doadores a bancos de sangue e centros de coleta. Nossa aplicação oferece as seguintes funcionalidades:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Localizador de Centros de Doação: Encontre o centro de doação de sangue mais próximo de você.
+- Lembrete de Doação: Configure lembretes para suas próximas doações.
+- Informações sobre Doação: Aprenda mais sobre os requisitos e benefícios da doação de sangue.
 
-## Build
+## Como Contribuir
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+A doação de código é tão importante quanto a doação de sangue. Se você deseja contribuir para o projeto, siga estes passos:
 
-## Running unit tests
+1. 🍴 Fork este repositório.
+2. 👯 Clone o repositório forkado para o seu ambiente de desenvolvimento.
+3. 📦 Crie uma nova branch para a sua contribuição: `git checkout -b feature/sua-contribuicao`
+4. ✍️ Faça suas alterações, adicione novos recursos ou corrija bugs.
+5. 📝 Descreva suas alterações no arquivo `CHANGELOG.md`.
+6. 📸 Certifique-se de que seu código esteja bem documentado e siga nossas diretrizes de estilo.
+7. 🧪 Execute testes se aplicável.
+8. 🔀 Envie suas alterações: `git push origin feature/sua-contribuicao`
+9. 📩 Crie um novo Pull Request.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contribuições
 
-## Running end-to-end tests
+Agradecemos a todas as pessoas que contribuíram para o projeto. 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Como Começar
 
-## Further help
+Siga estas etapas para começar com a nossa aplicação:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone este repositório: `git clone https://github.com/seu-usuario/doe-sangue-salve-vidas.git`
+2. Instale as dependências: `npm install`
+3. Inicie a aplicação: `npm start`
+
+## Ajude a Espalhar a Conscientização
+
+Você pode ajudar a espalhar a conscientização sobre a doação de sangue compartilhando nossa aplicação e nossos esforços nas redes sociais:
+
+
+## Sobre a Doação de Sangue
+
+A doação de sangue é um ato nobre que salva vidas. Saiba mais sobre os requisitos e benefícios da doação em nosso
+
+## Licença
+
+Este projeto é licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+
+Doe Sangue, Salve Vidas! 🩸
