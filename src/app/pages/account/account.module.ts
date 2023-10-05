@@ -6,10 +6,12 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { LoginService } from './pages/shared/services/login/login.service';
+import { MessageService } from 'primeng/api';
 
 const routes: Routes = [
   {
@@ -37,7 +39,11 @@ const routes: Routes = [
     PasswordModule,
     DividerModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
+  ],providers:[
+    LoginService,
+    MessageService
   ]
 })
 export class AccountModule { }

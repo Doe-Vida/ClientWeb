@@ -1,10 +1,57 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Login } from '../shared/models/login/login.model';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+import { BaseResult } from 'src/app/common/models/BaseResult';
+import { LoginService } from '../shared/services/login/login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit, OnDestroy{
 
+  public errorMessage?:string;
+  public validate?: boolean = false;
+  public login?: Login;
+  public form!: FormGroup;
+  private unsubscribe = new Array<Subscription>();
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private _loginService: LoginService,
+    private messageService: MessageService,
+    private _router: Router,
+  ){
+    this.buildResourceForm();
+  }
+
+  buildResourceForm(): void{
+    this.form = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    })
+  }
+
+  salvar():void{
+    this.validate = true;
+    this.login = Object.assign({}, new Login(), this.form.value);
+    const request = this._loginService.login(this.login);
+    const resultado = request.subscribe((response: BaseResult) => {
+      if(response.success){
+        localStorage.setItem('access_token', response.data.access_token);
+        this._router.navigate(['/home']);
+      }
+    });
+    this.unsubscribe.push(resultado);
+  }
+
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    this.unsubscribe.forEach((sb) => sb.unsubscribe());
+  }
 }

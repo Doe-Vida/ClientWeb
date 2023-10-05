@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http'
 import { BaseResult } from "../models/BaseResult";
 import { environment } from "src/app/environment/environment";
 
-export abstract class BaseService<T extends BaseModel>{
+export abstract class BaseService<T>{
   protected _http: HttpClient;
   protected _apiPath: string;
   protected _router: Router;

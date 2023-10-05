@@ -19,8 +19,6 @@ import { BaseService } from './common/services/Base.service';
     BrowserAnimationsModule,
     HttpClientModule,
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     Interceptor,
   ],
   providers: [],

@@ -6,11 +6,15 @@
     <p>Login</p>
   </div>
   <div class="body">
-    <form class="body-form">
+    <form [formGroup]="form" class="body-form">
       <img src="../../../../../assets/login.png" alt="Criar conta">
-      <input type="text" placeholder="Email" />
-      <input type="password" placeholder="Senha" />
-      <button class="submit" type="submit">Login</button>
+      <input type="text" placeholder="Email" formControlName="username"/>
+      <input type="password" placeholder="Senha" formControlName="password"/>
+      <button
+        [ngClass]="!form.valid ? 'disabled' : 'submit'"
+        [disabled]="!form.valid"
+        (click)="salvar()"
+        type="submit">Login</button>
       <div class="button-without-login">
         <p>Esqueceu sua senha? <a routerLink="../forgot-password">clique aqui</a></p>
       </div>
