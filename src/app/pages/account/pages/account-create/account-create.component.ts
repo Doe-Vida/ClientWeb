@@ -5,7 +5,6 @@ import { MessageService } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { BaseResult } from 'src/app/common/models/BaseResult';
 import { Login } from '../shared/models/login/login.model';
-import { LoginService } from '../shared/services/login/login.service';
 import { CreateAccountService } from '../shared/services/create-account/create-account.service';
 
 @Component({
@@ -15,10 +14,11 @@ import { CreateAccountService } from '../shared/services/create-account/create-a
 })
 export class AccountCreateComponent{
   public errorMessage?:string;
-  public validate?: boolean = false;
   public createAccount?: Login;
   public form!: FormGroup;
   private unsubscribe = new Array<Subscription>();
+  loading: boolean = false;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,19 +31,18 @@ export class AccountCreateComponent{
 
   buildResourceForm(): void{
     this.form = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      username: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
     })
   }
 
   salvar():void{
-    this.validate = true;
+    this.loading = true;
     this.createAccount = Object.assign({}, new Login(), this.form.value);
     const request = this._createAccountService.post(this.createAccount);
     const resultado = request.subscribe((response: BaseResult) => {
       if(response.success){
-        localStorage.setItem('access_token', response.data.access_token);
-        this._router.navigate(['/home']);
+        this._router.navigate(['/account/login']);
       }
     });
     this.unsubscribe.push(resultado);

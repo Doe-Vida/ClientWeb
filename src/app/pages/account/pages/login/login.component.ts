@@ -14,6 +14,7 @@ import { LoginService } from '../shared/services/login/login.service';
 })
 export class LoginComponent implements OnInit, OnDestroy{
 
+  loading:Boolean = false;
   public errorMessage?:string;
   public validate?: boolean = false;
   public login?: Login;
@@ -31,13 +32,13 @@ export class LoginComponent implements OnInit, OnDestroy{
 
   buildResourceForm(): void{
     this.form = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      username: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(8)]],
     })
   }
 
   salvar():void{
-    this.validate = true;
+    this.loading = true;
     this.login = Object.assign({}, new Login(), this.form.value);
     const request = this._loginService.login(this.login);
     const resultado = request.subscribe((response: BaseResult) => {
