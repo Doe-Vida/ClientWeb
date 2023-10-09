@@ -5,13 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Interceptor } from './common/interceptor/app.interceptor.module';
-import { BaseService } from './common/services/Base.service';
+import { LoginService } from './pages/account/pages/shared/services/login/login.service';
+import { FooterToolbarComponent } from './common/footer-toolbar/footer-toolbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,9 @@ import { BaseService } from './common/services/Base.service';
     CommonModule,
     Interceptor,
   ],
-  providers: [],
+  providers: [
+    LoginService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

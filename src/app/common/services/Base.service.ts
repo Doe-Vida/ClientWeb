@@ -42,4 +42,9 @@ export abstract class BaseService<T>{
   delete(resource: any): Observable<BaseResult|any>{
     return this._http.delete(`${this._apiPath}/${resource}`).pipe();
   }
+
+  getTokenAuthenticated(): boolean {
+    let token = localStorage.getItem('access_token');
+    return token?.length != null || undefined ? true : false;
+  }
 }

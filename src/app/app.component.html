@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<router-outlet>
+  <div *ngIf="isAuthenticated()">
+    <app-footer-toolbar></app-footer-toolbar>
+  </div>
+</router-outlet>

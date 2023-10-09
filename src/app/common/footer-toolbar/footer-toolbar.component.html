@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="navbar">
+    <div
+      class="op"
+      [ngClass]="activeTabHearth ? 'active' : ''"
+      (click)="activeTabHearthMethod()"
+    >
+      <i class="pi pi-heart-fill"></i>
+    </div>
+    <div
+      class="op"
+      [ngClass]="activeTabMap ? 'active' : ''"
+      (click)="activeTabMapMethod()"
+    >
+      <i class="pi pi-map-marker"></i>
+    </div>
+    <div
+      class="op"
+      [ngClass]="activeTabHome ? 'active' : ''"
+      (click)="activeTabHomeMethod()"
+    >
+      <i class="pi pi-home"></i>
+    </div>
+    <div
+      class="op"
+      [ngClass]="activeTabLaws ? 'active' : ''"
+      (click)="activeTabLawsMethod()"
+    >
+      <i class="pi pi-book"></i>
+    </div>
+    <div
+      class="op"
+      [ngClass]="activeTabXperience ? 'active' : ''"
+      (click)="activeTabXperienceMethod()"
+    >
+      <i class="pi pi-check-circle"></i>
+    </div>
+  </div>
+</div>
