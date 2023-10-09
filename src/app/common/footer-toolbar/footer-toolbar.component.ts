@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer-toolbar.component.scss']
 })
 export class FooterToolbarComponent {
-  activeTabHearth: boolean = true;
+  activeTabHearth: boolean = false;
   activeTabMap: boolean = false;
-  activeTabHome: boolean = false;
+  activeTabHome: boolean = true;
   activeTabLaws: boolean = false;
   activeTabXperience: boolean = false;
 
