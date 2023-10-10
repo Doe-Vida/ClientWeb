@@ -4,6 +4,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
+import { BottonEditComponent } from './components/botton-edit/botton-edit.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
   declarations: [
     HomePageComponent,
     HeaderComponent,
-    BodyComponent
+    BodyComponent,
+    BottonEditComponent
   ],
   imports: [
     CommonModule,
