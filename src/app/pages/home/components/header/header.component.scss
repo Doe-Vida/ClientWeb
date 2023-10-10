@@ -5,13 +5,15 @@
   .title{
     padding: 10px;
     font-size: 18px;
-    margin-bottom: 20px;
-    text-align: center;
     font-weight: bold;
+    display: flex;
+    justify-content: end;
+    align-items: center;
   }
   .user-info{
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 10px;
     img{
       height: 90px;
