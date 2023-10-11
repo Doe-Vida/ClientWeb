@@ -9,6 +9,9 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    img{
+      cursor: pointer;
+    }
   }
   .user-info{
     display: flex;

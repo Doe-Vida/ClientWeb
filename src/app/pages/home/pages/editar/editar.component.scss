@@ -1,0 +1,31 @@
+.header{
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  background-color: var(--pink-primary);
+  button{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 1s;
+    background-color: var(--pink-primary);
+    i{
+      color: white;
+    }
+    &:hover{
+      background-color: white;
+      color: var(--pink-primary);
+    }
+  }
+  p{
+    font-weight: bold;
+    color: white;
+  }
+}

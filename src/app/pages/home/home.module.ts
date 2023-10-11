@@ -5,10 +5,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { BottonEditComponent } from './components/botton-edit/botton-edit.component';
+import { EditarComponent } from './pages/editar/editar.component';
 
 const routes: Routes = [
   {
     path: '', component: HomePageComponent, pathMatch: 'full'
+  },
+  {
+    path: 'editar', component: EditarComponent
   }
 ]
 
@@ -17,7 +21,8 @@ const routes: Routes = [
     HomePageComponent,
     HeaderComponent,
     BodyComponent,
-    BottonEditComponent
+    BottonEditComponent,
+    EditarComponent
   ],
   imports: [
     CommonModule,
