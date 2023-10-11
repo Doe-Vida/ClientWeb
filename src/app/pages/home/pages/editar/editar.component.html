@@ -4,3 +4,19 @@
   </button>
   <p>Perfil</p>
 </div>
+<div class="form">
+  <form>
+    <input class="style-form" type="text" placeholder="Nome completo">
+    <select class="style-form">
+      <option value="" disabled selected>Tipo sanguíneo</option>
+      <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+    </select>
+    <select class="style-form">
+      <option value="" disabled selected>Gênero</option>
+      <option *ngFor="let sexo of sexos" [value]="sexo">{{ sexo }}</option>
+    </select>
+    <input class="style-form" type="tel" placeholder="Telefone">
+    <input class="style-form" type="date" placeholder="Data de nascimento">
+    <button type="submit">Salvar</button>
+  </form>
+</div>

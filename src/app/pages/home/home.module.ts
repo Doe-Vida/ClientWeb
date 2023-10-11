@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { BottonEditComponent } from './components/botton-edit/botton-edit.component';
 import { EditarComponent } from './pages/editar/editar.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
     EditarComponent
   ],
   imports: [
+    InputTextModule,
     CommonModule,
     RouterModule.forChild(routes)
   ]
