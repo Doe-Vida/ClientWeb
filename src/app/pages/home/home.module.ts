@@ -6,11 +6,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { BottonEditComponent } from './components/botton-edit/botton-edit.component';
 import { EditarComponent } from './pages/editar/editar.component';
-import { InputTextModule } from 'primeng/inputtext';
 import { IbgeService } from 'src/app/common/services/ibge.service';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardDonationStepComponent } from './components/card-donation-step/card-donation-step.component';
+import { CarrouselGetInpiredComponent } from './components/carrousel-get-inpired/carrousel-get-inpired.component';
 
 const routes: Routes = [
   {
@@ -28,7 +27,8 @@ const routes: Routes = [
     BodyComponent,
     BottonEditComponent,
     EditarComponent,
-    CardDonationStepComponent
+    CardDonationStepComponent,
+    CarrouselGetInpiredComponent
   ],
   imports: [
     CommonModule,
