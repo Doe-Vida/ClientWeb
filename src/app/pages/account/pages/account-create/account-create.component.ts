@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { Message, MessageService } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { BaseResult } from 'src/app/common/models/BaseResult';
 import { Login } from '../shared/models/login/login.model';
@@ -19,12 +19,11 @@ export class AccountCreateComponent{
   private unsubscribe = new Array<Subscription>();
   loading: boolean = false;
 
-
   constructor(
     private formBuilder: FormBuilder,
     private _createAccountService: CreateAccountService,
-    private messageService: MessageService,
     private _router: Router,
+    private messageService: MessageService,
   ){
     this.buildResourceForm();
   }
@@ -42,13 +41,16 @@ export class AccountCreateComponent{
     const request = this._createAccountService.post(this.createAccount);
     const resultado = request.subscribe((response: BaseResult) => {
       if(response.success){
+      this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Conta criada' });
+      setTimeout(() => {
         this._router.navigate(['/account/login']);
+      }, 3000);
       }
+    }, (error: Error) => {
+      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao criar a conta...' });
     });
     this.unsubscribe.push(resultado);
   }
-
-  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.unsubscribe.forEach((sb) => sb.unsubscribe());
