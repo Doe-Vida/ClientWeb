@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { BaseResult } from 'src/app/common/models/BaseResult';
 import { Login } from '../shared/models/login/login.model';
 import { CreateAccountService } from '../shared/services/create-account/create-account.service';
+import { LoginService } from '../shared/services/login/login.service';
 
 @Component({
   selector: 'app-account-create',
@@ -22,6 +23,7 @@ export class AccountCreateComponent{
   constructor(
     private formBuilder: FormBuilder,
     private _createAccountService: CreateAccountService,
+    private _loginService: LoginService,
     private _router: Router,
     private messageService: MessageService,
   ){
@@ -43,7 +45,14 @@ export class AccountCreateComponent{
       if(response.success){
       this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Conta criada' });
       setTimeout(() => {
-        this._router.navigate(['/account/login']);
+        const login = this._loginService.login(this.createAccount).subscribe((response: BaseResult) => {
+          if(response.success){
+            localStorage.setItem('access_token', response.data.access_token);
+            this._loginService._loginAccount = this.createAccount?.username;
+            this._router.navigate(['/home/editar']);
+          }
+        });
+        this.unsubscribe.push(login);
       }, 3000);
       }
     }, (error: Error) => {

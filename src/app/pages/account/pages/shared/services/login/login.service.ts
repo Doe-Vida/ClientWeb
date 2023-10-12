@@ -6,6 +6,8 @@ import { Login } from "../../models/login/login.model";
   providedIn: 'root'
 })
 export class LoginService extends BaseService<Login>{
+  public _loginAccount?: string;
+
   constructor(injector: Injector) {
     super('login', injector);
   }

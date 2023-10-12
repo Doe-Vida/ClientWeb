@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit, OnDestroy{
     const resultado = request.subscribe((response: BaseResult) => {
       if(response.success){
         localStorage.setItem('access_token', response.data.access_token);
+        this._loginService._loginAccount = this.login?.username
         this._router.navigate(['/home']);
       }
     });

@@ -1,6 +1,6 @@
 import { Injector } from "@angular/core";
 import { Router } from "@angular/router";
-import { Observable } from "rxjs";
+import { Observable, map } from "rxjs";
 import { BaseModel } from "../models/BaseModel";
 import {HttpClient} from '@angular/common/http'
 import { BaseResult } from "../models/BaseResult";
@@ -10,7 +10,6 @@ export abstract class BaseService<T>{
   protected _http: HttpClient;
   protected _apiPath: string;
   protected _router: Router;
-  private _retorno?: BaseResult;
 
   constructor(
     protected _pathResource: string,
