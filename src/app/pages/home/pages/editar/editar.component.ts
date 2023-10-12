@@ -18,4 +18,17 @@ export class EditarComponent {
   ];
 
   sexos: string[] = ["M", "F"];
+
+  selectedImage: string = '';
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.selectedImage = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
 }
