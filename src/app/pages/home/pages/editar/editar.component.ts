@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-editar',
@@ -6,29 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./editar.component.scss']
 })
 export class EditarComponent {
-  tipos: string[] = [
-    'A+',
-    'A-',
-    'B+',
-    'B-',
-    'AB+',
-    'AB-',
-    'O+',
-    'O-'
-  ];
 
+  tipos: string[] = ['A+','A-','B+','B-','AB+','AB-','O+','O-'];
   sexos: string[] = ["M", "F"];
+  @ViewChild('fileInput') fileInput!: ElementRef;
 
-  selectedImage: string = '';
+  openFileInput() {
+    this.fileInput.nativeElement.click();
+  }
 
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
+  onFileSelected(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const file = inputElement.files?.[0];
+
     if (file) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        this.selectedImage = e.target.result;
-      };
-      reader.readAsDataURL(file);
+      console.log('Arquivo selecionado:', file);
     }
   }
 }
