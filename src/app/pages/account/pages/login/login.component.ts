@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy{
   loading:Boolean = false;
   public errorMessage?:string;
   public validate?: boolean = false;
-  public login?: Login;
+  public login!: Login;
   public form!: FormGroup;
   private unsubscribe = new Array<Subscription>();
 
@@ -42,8 +42,8 @@ export class LoginComponent implements OnInit, OnDestroy{
     const request = this._loginService.login(this.login);
     const resultado = request.subscribe((response: BaseResult) => {
       if(response.success){
+        localStorage.setItem('login', this.login.username);
         localStorage.setItem('access_token', response.data.access_token);
-        this._loginService._loginAccount = this.login?.username
         this._router.navigate(['/home']);
       }
     });

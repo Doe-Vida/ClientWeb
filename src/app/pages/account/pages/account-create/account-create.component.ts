@@ -48,7 +48,6 @@ export class AccountCreateComponent{
         const login = this._loginService.login(this.createAccount).subscribe((response: BaseResult) => {
           if(response.success){
             localStorage.setItem('access_token', response.data.access_token);
-            this._loginService._loginAccount = this.createAccount?.username;
             this._router.navigate(['/home/editar']);
           }
         });

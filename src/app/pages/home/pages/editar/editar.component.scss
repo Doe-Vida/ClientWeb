@@ -49,7 +49,7 @@
       color: var(--gray-900);
     }
 
-    button{
+    .submit{
       width: 80%;
       padding: 10px;
       border-radius: 20px;
@@ -60,6 +60,19 @@
       font-size: 18px;
       color: white;
       cursor: pointer;
+    }
+
+    .disabled{
+      width: 80%;
+      padding: 10px;
+      border-radius: 20px;
+      margin-top: 10px;
+      background-color: var(--gray-200);
+      border: 0;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 1s;
     }
 
     .profile-container {

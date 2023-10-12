@@ -5,6 +5,9 @@ import { Estado } from 'src/app/common/models/Estado/Estado';
 import { Municipio } from 'src/app/common/models/Municipio/Municipio';
 import { User } from 'src/app/common/models/User/User';
 import { IbgeService } from 'src/app/common/services/ibge.service';
+import { LoginService } from 'src/app/pages/account/pages/shared/services/login/login.service';
+import { UserService } from '../shared/user.service';
+import { BaseResult } from 'src/app/common/models/BaseResult';
 
 interface Sexo{
   type: boolean;
@@ -24,7 +27,7 @@ export class EditarComponent implements OnInit, OnDestroy{
   public citys = new Array<Municipio>();
   public _unsubscribe = new Array<Subscription>();
   public form!: FormGroup;
-  public Usuario?: User
+  public entity?: User
 
   public stateSelected: string = '';
 
@@ -32,28 +35,36 @@ export class EditarComponent implements OnInit, OnDestroy{
 
   constructor(
     private readonly _ibgeService: IbgeService,
+    private _userService: UserService,
     private formBuilder: FormBuilder,
   ){
-    this.buildResourceForm();
+
   }
 
   buildResourceForm(): void {
     this.form = this.formBuilder.group({
-      first_name: [this.Usuario?.first_name, [Validators.required]],
-      last_name: [this.Usuario?.last_name, [Validators.required]],
-      blood_type: [this.Usuario?.blood_type, [Validators.required]],
-      sex: [this.Usuario?.sex, [Validators.required]],
-      state: [this.Usuario?.state, [Validators.required]],
-      city: [this.Usuario?.city, [Validators.required]],
-      phone: [this.Usuario?.phone, [Validators.required]],
-      birthdate: [this.Usuario?.birthdate, [Validators.required]],
-      date_last_donation: [this.Usuario?.date_last_donation],
-      id: [this.Usuario?.id],
-      username: [this.Usuario?.username],
+      first_name: [this.entity?.first_name, [Validators.required]],
+      last_name: [this.entity?.last_name, [Validators.required]],
+      blood_type: [this.entity?.blood_type, [Validators.required]],
+      sex: [this.entity?.sex, [Validators.required]],
+      state: [this.entity?.state, [Validators.required]],
+      city: [this.entity?.city, [Validators.required]],
+      phone: [this.entity?.phone, [Validators.required]],
+      birthdate: [this.entity?.birthdate, [Validators.required]],
+      date_last_donation: [this.entity?.date_last_donation],
+      id: [this.entity?.id],
+      username: [this.entity?.username],
     })
   }
 
   ngOnInit(): void {
+    const email = localStorage.getItem('login');
+    const request = this._userService.getByName(email).subscribe((response: BaseResult) => {
+      this.entity = response.data;
+      console.log(response.data);
+    });
+    this._unsubscribe.push(request);
+    this.buildResourceForm();
     this.loadStates();
   }
 
@@ -72,6 +83,12 @@ export class EditarComponent implements OnInit, OnDestroy{
       this.citys = response as Municipio[];
     });
     this._unsubscribe.push(sub);
+  }
+
+  save(): void {
+    const update = Object.assign({}, new User(), this.form.value);
+
+    console.log(update);
   }
 
   openFileInput() {
