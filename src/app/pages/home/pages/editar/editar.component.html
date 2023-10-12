@@ -13,18 +13,20 @@
         <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
       </div>
     </div>
-    <input class="style-form" type="text" placeholder="Nome completo">
+    <input class="style-form" type="text" placeholder="Nome">
+    <input class="style-form" type="text" placeholder="Sobrenome">
+    <input class="style-form" type="text" placeholder="Email" disabled>
     <select class="style-form">
       <option value="" disabled selected>Tipo sanguíneo</option>
       <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
     </select>
     <select class="style-form">
       <option value="" disabled selected>Gênero</option>
-      <option *ngFor="let sexo of sexos" [value]="sexo">{{ sexo }}</option>
+      <option *ngFor="let sexo of sexos" [value]="sexo.type">{{ sexo.name }}</option>
     </select>
-    <select class="style-form">
-      <option value="" disabled selected>Estado</option>
-      <option  *ngFor="let state of states" [value]="state.sigla">{{ state.nome }}</option>
+    <select class="style-form" (change)="loadCitys($event.target)">
+      <option disabled selected>Estado</option>
+      <option  *ngFor="let state of states" [value]="state.sigla" >{{ state.nome }}</option>
     </select>
     <select class="style-form">
       <option value="" disabled selected>Cidade</option>

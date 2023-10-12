@@ -6,6 +6,11 @@ import { Municipio } from 'src/app/common/models/Municipio/Municipio';
 import { User } from 'src/app/common/models/User/User';
 import { IbgeService } from 'src/app/common/services/ibge.service';
 
+interface Sexo{
+  type: boolean;
+  name: string;
+}
+
 @Component({
   selector: 'app-editar',
   templateUrl: './editar.component.html',
@@ -14,7 +19,7 @@ import { IbgeService } from 'src/app/common/services/ibge.service';
 export class EditarComponent implements OnInit, OnDestroy{
 
   public tipos: string[] = ['A+','A-','B+','B-','AB+','AB-','O+','O-'];
-  public sexos: string[] = ["M", "F"];
+  public sexos: Sexo[] = [{type: false, name: "M"},{type: true, name: "F"}];
   public states = new Array<Estado>();
   public citys = new Array<Municipio>();
   public _unsubscribe = new Array<Subscription>();
@@ -60,9 +65,10 @@ export class EditarComponent implements OnInit, OnDestroy{
     this._unsubscribe.push(sub);
   }
 
-  loadCitys(): void{
+  loadCitys(sigla: any): void{
+    let UF = (sigla as HTMLInputElement).value;
     this.citys = [];
-    const sub = this._ibgeService.getAll("SP").subscribe((response: Municipio[]) => {
+    const sub = this._ibgeService.getAll(UF).subscribe((response: Municipio[]) => {
       this.citys = response as Municipio[];
     });
     this._unsubscribe.push(sub);
