@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { IbgeService } from 'src/app/common/services/ibge.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CardDonationStepComponent } from './components/card-donation-step/card-donation-step.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
     HeaderComponent,
     BodyComponent,
     BottonEditComponent,
-    EditarComponent
+    EditarComponent,
+    CardDonationStepComponent
   ],
   imports: [
     CommonModule,
