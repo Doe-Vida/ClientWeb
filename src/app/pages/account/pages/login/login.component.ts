@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit, OnDestroy{
   constructor(
     private formBuilder: FormBuilder,
     private _loginService: LoginService,
-    private messageService: MessageService,
     private _router: Router,
   ){
     this.buildResourceForm();

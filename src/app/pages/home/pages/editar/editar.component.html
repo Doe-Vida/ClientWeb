@@ -22,6 +22,14 @@
       <option value="" disabled selected>Gênero</option>
       <option *ngFor="let sexo of sexos" [value]="sexo">{{ sexo }}</option>
     </select>
+    <select class="style-form">
+      <option value="" disabled selected>Estado</option>
+      <option  *ngFor="let state of states" [value]="state.sigla">{{ state.nome }}</option>
+    </select>
+    <select class="style-form">
+      <option value="" disabled selected>Cidade</option>
+      <option *ngFor="let city of citys" [value]="city">{{ city.nome }}</option>
+    </select>
     <input class="style-form" type="tel" placeholder="Telefone">
     <input class="style-form" type="date" placeholder="Data de nascimento">
     <button type="submit">Salvar</button>

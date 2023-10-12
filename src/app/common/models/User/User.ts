@@ -5,13 +5,13 @@ export class User{
   public date_last_donation?: string
   public first_name?: string
   public id?: string
-  public last_nam?: string
-  public passwor?: string
-  public phon?: string
-  public qty_donation?: string
-  public se?: boolean
-  public stat?: string
-  public usernam?: string
+  public last_name?: string
+  public password?: string
+  public phone?: string
+  public qty_donations?: string
+  public sex?: boolean
+  public state?: string
+  public username?: string
 
   static froJson(jsonData: any): User {
     return Object.assign({}, new User(), jsonData);
