@@ -49,7 +49,7 @@ export class AccountCreateComponent{
       setTimeout(() => {
         const login = this._loginService.login(this.createAccount).subscribe((response: BaseResult) => {
           if(response.success){
-            this._cookieService.set('access_token', response.data.access_token);
+            this._cookieService.set('access_token', response.data.access_token, 1/24);
             this._router.navigate(['/home/editar']);
           }
         });
