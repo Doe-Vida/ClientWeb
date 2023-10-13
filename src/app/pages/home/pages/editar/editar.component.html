@@ -5,7 +5,7 @@
   </button>
   <p>Perfil</p>
 </div>
-<div class="form" *ngIf="entity">
+<div class="form" *ngIf="entity; else load">
   <form [formGroup]="form">
     <div class="profile-container">
       <img class="profile-photo" src="../../../../../assets/image-user.jpeg" alt="Usuário">
@@ -37,6 +37,7 @@
     <button [disabled]="!form.valid" type="submit" [ngClass]="!form.valid ? 'disabled' : 'submit'" (click)="save()">Salvar</button>
   </form>
 </div>
-<div *ngIf="loading" class="overlay">
-  <div class="loading-spinner"></div>
-</div>
+
+<ng-template #load>
+  <app-loading></app-loading>
+</ng-template>

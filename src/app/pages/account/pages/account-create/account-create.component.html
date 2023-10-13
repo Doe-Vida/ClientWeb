@@ -21,8 +21,8 @@
         <img src="../../../../../assets/face.png" alt="Facebook">
         <img src="../../../../../assets/google-icon.png" alt="Google">
       </div>
-      <div *ngIf="loading" class="overlay">
-        <div class="loading-spinner"></div>
+      <div *ngIf="loading">
+        <app-loading></app-loading>
       </div>
     </form>
   </div>
