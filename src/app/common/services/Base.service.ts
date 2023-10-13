@@ -11,9 +11,9 @@ export abstract class BaseService<T>{
   protected _http: HttpClient;
   protected _apiPath: string;
   protected _router: Router;
+  private _cookieService!: CookieService;
 
   constructor(
-    private _cookieService: CookieService,
     protected _pathResource: string,
     protected _injector: Injector
   ) {
