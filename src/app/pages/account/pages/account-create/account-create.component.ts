@@ -7,6 +7,7 @@ import { BaseResult } from 'src/app/common/models/BaseResult';
 import { Login } from '../shared/models/login/login.model';
 import { CreateAccountService } from '../shared/services/create-account/create-account.service';
 import { LoginService } from '../shared/services/login/login.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-account-create',
@@ -24,6 +25,7 @@ export class AccountCreateComponent{
     private formBuilder: FormBuilder,
     private _createAccountService: CreateAccountService,
     private _loginService: LoginService,
+    private _cookieService: CookieService,
     private _router: Router,
     private messageService: MessageService,
   ){
@@ -47,7 +49,7 @@ export class AccountCreateComponent{
       setTimeout(() => {
         const login = this._loginService.login(this.createAccount).subscribe((response: BaseResult) => {
           if(response.success){
-            localStorage.setItem('access_token', response.data.access_token);
+            this._cookieService.set('access_token', response.data.access_token);
             this._router.navigate(['/home/editar']);
           }
         });

@@ -5,6 +5,7 @@ import { BaseModel } from "../models/BaseModel";
 import {HttpClient} from '@angular/common/http'
 import { BaseResult } from "../models/BaseResult";
 import { environment } from "src/app/environment/environment";
+import { CookieService } from "ngx-cookie-service";
 
 export abstract class BaseService<T>{
   protected _http: HttpClient;
@@ -12,6 +13,7 @@ export abstract class BaseService<T>{
   protected _router: Router;
 
   constructor(
+    private _cookieService: CookieService,
     protected _pathResource: string,
     protected _injector: Injector
   ) {
@@ -43,7 +45,7 @@ export abstract class BaseService<T>{
   }
 
   getTokenAuthenticated(): boolean {
-    let token = localStorage.getItem('access_token');
+    let token = this._cookieService.get('access_token');
     return token?.length != null || undefined ? true : false;
   }
 }

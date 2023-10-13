@@ -5,9 +5,9 @@ import { Estado } from 'src/app/common/models/Estado/Estado';
 import { Municipio } from 'src/app/common/models/Municipio/Municipio';
 import { User } from 'src/app/common/models/User/User';
 import { IbgeService } from 'src/app/common/services/ibge.service';
-import { LoginService } from 'src/app/pages/account/pages/shared/services/login/login.service';
 import { UserService } from '../shared/user.service';
 import { BaseResult } from 'src/app/common/models/BaseResult';
+import { CookieService } from 'ngx-cookie-service';
 
 interface Sexo{
   type: boolean;
@@ -36,6 +36,7 @@ export class EditarComponent implements OnInit, OnDestroy{
   constructor(
     private readonly _ibgeService: IbgeService,
     private _userService: UserService,
+    private _cookieService: CookieService,
     private formBuilder: FormBuilder,
   ){
 
@@ -58,7 +59,7 @@ export class EditarComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    const email = localStorage.getItem('login');
+    const email = this._cookieService.get('login');
     const request = this._userService.getByName(email).subscribe((response: BaseResult) => {
       this.entity = response.data;
       console.log(response.data);
