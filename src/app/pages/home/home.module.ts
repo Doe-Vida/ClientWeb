@@ -12,6 +12,9 @@ import { CardDonationStepComponent } from './components/card-donation-step/card-
 import { CarrouselGetInpiredComponent } from './components/carrousel-get-inpired/carrousel-get-inpired.component';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { LoadingComponent } from 'src/app/common/components/loading/loading.component';
+import { AppModule } from 'src/app/app.module';
+import { LoadingModule } from 'src/app/common/components/loading/loading/loading.module';
 
 const routes: Routes = [
   {
@@ -36,6 +39,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     ToastModule,
+    LoadingModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
