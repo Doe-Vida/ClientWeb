@@ -104,5 +104,31 @@
       z-index: 1; /* Aumentamos o z-index para que o .edit-button fique acima da .profile-container. */
       box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com um pouco de transparência */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999; /* Um valor alto para garantir que fique sobre todos os outros elementos */
+    }
+
+    .loading-spinner {
+      border: 6px solid #f3f3f3; /* Cor do spinner */
+      border-top: 6px solid var(--pink-primary); /* Cor do spinner */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 2s linear infinite; /* Animação de rotação */
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   }
 }

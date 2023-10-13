@@ -8,6 +8,8 @@ import { IbgeService } from 'src/app/common/services/ibge.service';
 import { UserService } from '../shared/user.service';
 import { BaseResult } from 'src/app/common/models/BaseResult';
 import { CookieService } from 'ngx-cookie-service';
+import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 interface Sexo{
   type: boolean;
@@ -27,9 +29,9 @@ export class EditarComponent implements OnInit, OnDestroy{
   public citys = new Array<Municipio>();
   public _unsubscribe = new Array<Subscription>();
   public form!: FormGroup;
-  public entity?: User
+  public entity!: User
 
-  public stateSelected: string = '';
+  loading: boolean = false;
 
   @ViewChild('fileInput') fileInput!: ElementRef;
 
@@ -37,6 +39,8 @@ export class EditarComponent implements OnInit, OnDestroy{
     private readonly _ibgeService: IbgeService,
     private _userService: UserService,
     private _cookieService: CookieService,
+    private _router: Router,
+    private messageService: MessageService,
     private formBuilder: FormBuilder,
   ){
 
@@ -44,17 +48,17 @@ export class EditarComponent implements OnInit, OnDestroy{
 
   buildResourceForm(): void {
     this.form = this.formBuilder.group({
-      first_name: [this.entity?.first_name, [Validators.required]],
-      last_name: [this.entity?.last_name, [Validators.required]],
-      blood_type: [this.entity?.blood_type, [Validators.required]],
-      sex: [this.entity?.sex, [Validators.required]],
-      state: [this.entity?.state, [Validators.required]],
-      city: [this.entity?.city, [Validators.required]],
-      phone: [this.entity?.phone, [Validators.required]],
-      birthdate: [this.entity?.birthdate, [Validators.required]],
-      date_last_donation: [this.entity?.date_last_donation],
-      id: [this.entity?.id],
-      username: [this.entity?.username],
+      first_name: [this.entity.first_name, [Validators.required]],
+      last_name: [this.entity.last_name, [Validators.required]],
+      blood_type: [this.entity.blood_type, [Validators.required]],
+      sex: [this.entity.sex, [Validators.required]],
+      state: [this.entity.state, [Validators.required]],
+      city: [this.entity.city, [Validators.required]],
+      phone: [this.entity.phone, [Validators.required]],
+      birthdate: [this.entity.birthdate, [Validators.required]],
+      date_last_donation: [this.entity.date_last_donation],
+      id: [this.entity.id],
+      username: [this.entity.username],
     })
   }
 
@@ -62,10 +66,9 @@ export class EditarComponent implements OnInit, OnDestroy{
     const email = this._cookieService.get('login');
     const request = this._userService.getByName(email).subscribe((response: BaseResult) => {
       this.entity = response.data;
-      console.log(response.data);
+      this.buildResourceForm();
     });
     this._unsubscribe.push(request);
-    this.buildResourceForm();
     this.loadStates();
   }
 
@@ -87,9 +90,19 @@ export class EditarComponent implements OnInit, OnDestroy{
   }
 
   save(): void {
+    this.loading = true;
     const update = Object.assign({}, new User(), this.form.value);
-
-    console.log(update);
+    const request = this._userService.update(update, this.entity.username).subscribe((response: BaseResult)=>{
+      if(response.success){
+        this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Conta atualizada' });
+        setTimeout(() => {
+          this._router.navigate(['/home']);
+        }, 3000);
+      }
+    }, (error: Error) => {
+      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao atualizar a conta...' });
+    });
+    this._unsubscribe.push(request);
   }
 
   openFileInput() {

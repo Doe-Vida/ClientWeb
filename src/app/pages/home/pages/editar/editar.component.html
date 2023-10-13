@@ -1,10 +1,11 @@
 <div class="header">
+  <p-toast></p-toast>
   <button routerLink="/home">
     <i class="pi pi-angle-left" ></i>
   </button>
   <p>Perfil</p>
 </div>
-<div class="form">
+<div class="form" *ngIf="entity">
   <form [formGroup]="form">
     <div class="profile-container">
       <img class="profile-photo" src="../../../../../assets/image-user.jpeg" alt="Usuário">
@@ -35,4 +36,7 @@
     <input class="style-form" type="date" placeholder="Data de nascimento" formControlName="birthdate">
     <button [disabled]="!form.valid" type="submit" [ngClass]="!form.valid ? 'disabled' : 'submit'" (click)="save()">Salvar</button>
   </form>
+</div>
+<div *ngIf="loading" class="overlay">
+  <div class="loading-spinner"></div>
 </div>

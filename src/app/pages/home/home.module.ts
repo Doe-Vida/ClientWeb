@@ -10,6 +10,8 @@ import { IbgeService } from 'src/app/common/services/ibge.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardDonationStepComponent } from './components/card-donation-step/card-donation-step.component';
 import { CarrouselGetInpiredComponent } from './components/carrousel-get-inpired/carrousel-get-inpired.component';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 const routes: Routes = [
   {
@@ -33,11 +35,13 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ToastModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   providers: [
-    IbgeService
+    IbgeService,
+    MessageService,
   ]
 })
 export class HomeModule { }

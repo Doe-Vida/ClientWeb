@@ -11,7 +11,7 @@ export class User{
   public qty_donations?: string
   public sex?: boolean
   public state?: string
-  public username?: string
+  public username!: string
 
   static froJson(jsonData: any): User {
     return Object.assign({}, new User(), jsonData);
