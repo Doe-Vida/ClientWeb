@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginService } from './pages/account/pages/shared/services/login/login.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'Doe vida';
 
   constructor(
-    private _baseService: LoginService,
+    private _cookieService: CookieService,
     private router: Router
   ){}
 
@@ -20,6 +20,7 @@ export class AppComponent {
   }
 
   isAuthenticated(): boolean {
-    return this._baseService.getTokenAuthenticated();
+    let token = this._cookieService.get('access_token');
+    return token?.length > 0 ? true : false;
   }
 }

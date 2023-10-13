@@ -11,7 +11,6 @@ export abstract class BaseService<T>{
   protected _http: HttpClient;
   protected _apiPath: string;
   protected _router: Router;
-  private _cookieService!: CookieService;
 
   constructor(
     protected _pathResource: string,
@@ -42,10 +41,5 @@ export abstract class BaseService<T>{
   }
   delete(resource: any): Observable<BaseResult|any>{
     return this._http.delete(`${this._apiPath}/${resource}`).pipe();
-  }
-
-  getTokenAuthenticated(): boolean {
-    let token = this._cookieService.get('access_token');
-    return token?.length != null || undefined ? true : false;
   }
 }
