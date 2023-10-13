@@ -13,6 +13,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { LoginService } from './pages/shared/services/login/login.service';
 import { MessageService } from 'primeng/api';
 import { CreateAccountService } from './pages/shared/services/create-account/create-account.service';
+import { ToastModule } from 'primeng/toast';
 
 const routes: Routes = [
   {
@@ -41,6 +42,7 @@ const routes: Routes = [
     DividerModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastModule,
     RouterModule.forChild(routes)
   ],providers:[
     LoginService,

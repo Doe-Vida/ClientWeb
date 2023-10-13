@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { BaseResult } from 'src/app/common/models/BaseResult';
 import { LoginService } from '../shared/services/login/login.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -17,14 +18,14 @@ export class LoginComponent implements OnInit, OnDestroy{
   loading:Boolean = false;
   public errorMessage?:string;
   public validate?: boolean = false;
-  public login?: Login;
+  public login!: Login;
   public form!: FormGroup;
   private unsubscribe = new Array<Subscription>();
 
   constructor(
     private formBuilder: FormBuilder,
     private _loginService: LoginService,
-    private messageService: MessageService,
+    private _cookieService: CookieService,
     private _router: Router,
   ){
     this.buildResourceForm();
@@ -43,7 +44,8 @@ export class LoginComponent implements OnInit, OnDestroy{
     const request = this._loginService.login(this.login);
     const resultado = request.subscribe((response: BaseResult) => {
       if(response.success){
-        localStorage.setItem('access_token', response.data.access_token);
+        this._cookieService.set('login', this.login.username, 1/24);
+        this._cookieService.set('access_token', response.data.access_token, 1/24);
         this._router.navigate(['/home']);
       }
     });

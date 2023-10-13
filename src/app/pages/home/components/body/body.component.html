@@ -1,0 +1,25 @@
+<div class="body">
+  <div class="header-body">
+    <div class="info">
+      <p>{{entity.date_last_donation ?? '-'}}</p>
+      <p>Última doação</p>
+    </div>
+    <div class="info">
+      <p>{{entity.blood_type ?? '-'}}</p>
+      <p>Tipo sanguíneo</p>
+    </div>
+  </div>
+  <div class="last-donation-and-steps">
+    <app-card-donation-step
+      [icone]="'../../../../../assets/Group 19.png'"
+      [texto]="'Teste aptidão'"
+    ></app-card-donation-step>
+    <app-card-donation-step
+      [icone]="'../../../../../assets/path2879.png'"
+      [texto]="'Passo à passo'"
+    ></app-card-donation-step>
+  </div>
+  <div class="get-inspired">
+    <app-carrousel-get-inpired></app-carrousel-get-inpired>
+  </div>
+</div>

@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { Message, MessageService } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { BaseResult } from 'src/app/common/models/BaseResult';
 import { Login } from '../shared/models/login/login.model';
 import { CreateAccountService } from '../shared/services/create-account/create-account.service';
+import { LoginService } from '../shared/services/login/login.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-account-create',
@@ -19,12 +21,13 @@ export class AccountCreateComponent{
   private unsubscribe = new Array<Subscription>();
   loading: boolean = false;
 
-
   constructor(
     private formBuilder: FormBuilder,
     private _createAccountService: CreateAccountService,
-    private messageService: MessageService,
+    private _loginService: LoginService,
+    private _cookieService: CookieService,
     private _router: Router,
+    private messageService: MessageService,
   ){
     this.buildResourceForm();
   }
@@ -42,13 +45,22 @@ export class AccountCreateComponent{
     const request = this._createAccountService.post(this.createAccount);
     const resultado = request.subscribe((response: BaseResult) => {
       if(response.success){
-        this._router.navigate(['/account/login']);
+      this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Conta criada' });
+      setTimeout(() => {
+        const login = this._loginService.login(this.createAccount).subscribe((response: BaseResult) => {
+          if(response.success){
+            this._cookieService.set('access_token', response.data.access_token, 1/24);
+            this._router.navigate(['/home/editar']);
+          }
+        });
+        this.unsubscribe.push(login);
+      }, 3000);
       }
+    }, (error: Error) => {
+      this.messageService.add({ severity: 'error', summary: 'Erro', detail: 'Erro ao criar a conta...' });
     });
     this.unsubscribe.push(resultado);
   }
-
-  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.unsubscribe.forEach((sb) => sb.unsubscribe());

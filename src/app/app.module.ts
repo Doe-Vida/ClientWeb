@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Interceptor } from './common/interceptor/app.interceptor.module';
 import { LoginService } from './pages/account/pages/shared/services/login/login.service';
 import { FooterToolbarComponent } from './common/footer-toolbar/footer-toolbar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FooterToolbarComponent } from './common/footer-toolbar/footer-toolbar.c
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,

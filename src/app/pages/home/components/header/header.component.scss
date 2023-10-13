@@ -1,0 +1,28 @@
+.header{
+  background-color: var(--pink-primary);
+  padding: 15px;
+  color: white;
+  margin-bottom: 20px;
+  .title{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    img{
+      cursor: pointer;
+    }
+  }
+  .user-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    img{
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+  }
+}
