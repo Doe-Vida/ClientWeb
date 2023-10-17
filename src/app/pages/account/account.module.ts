@@ -14,6 +14,7 @@ import { LoginService } from './pages/shared/services/login/login.service';
 import { MessageService } from 'primeng/api';
 import { CreateAccountService } from './pages/shared/services/create-account/create-account.service';
 import { ToastModule } from 'primeng/toast';
+import { LoadingModule } from 'src/app/common/components/loading/loading/loading.module';
 
 const routes: Routes = [
   {
@@ -43,6 +44,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     ToastModule,
+    LoadingModule,
     RouterModule.forChild(routes)
   ],providers:[
     LoginService,

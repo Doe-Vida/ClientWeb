@@ -1,2 +1,7 @@
-<app-header [entity]="entity"></app-header>
-<app-body [entity]="entity"></app-body>
+<div *ngIf="entity; else load">
+  <app-header [entity]="entity"></app-header>
+  <app-body [entity]="entity"></app-body>
+</div>
+<ng-template #load>
+  <app-loading></app-loading>
+</ng-template>

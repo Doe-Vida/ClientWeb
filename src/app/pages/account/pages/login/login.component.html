@@ -18,8 +18,8 @@
       <div class="button-without-login">
         <p>Esqueceu sua senha? <a routerLink="../forgot-password">clique aqui</a></p>
       </div>
-      <div *ngIf="loading" class="overlay">
-        <div class="loading-spinner"></div>
+      <div *ngIf="loading">
+        <app-loading></app-loading>
       </div>
     </form>
   </div>

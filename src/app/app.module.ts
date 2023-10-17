@@ -7,13 +7,13 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Interceptor } from './common/interceptor/app.interceptor.module';
 import { LoginService } from './pages/account/pages/shared/services/login/login.service';
-import { FooterToolbarComponent } from './common/footer-toolbar/footer-toolbar.component';
+import { FooterToolbarComponent } from './common/components/footer-toolbar/footer-toolbar.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterToolbarComponent
+    FooterToolbarComponent,
   ],
   imports: [
     BrowserModule,
