@@ -8,4 +8,5 @@ import { Component, Input, Output } from '@angular/core';
 export class CardDonationStepComponent {
   @Input() icone!: string;
   @Input() texto!: string;
+  @Input() rotaLink!: string;
 }
