@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./back-toolbar.component.scss']
 })
 export class BackToolbarComponent {
-  @Input() routerLink!: string;
+  @Input() rotaLink!: string;
   @Input() Title!: string;
 }

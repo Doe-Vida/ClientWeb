@@ -20,8 +20,6 @@ const routes: Routes = [
     path: 'xp', canActivate: [AuthGuard], loadChildren: () => import('./pages/xperience/xperience.module').then((m) => m.XperienceModule)
   },{
     path: 'laws', canActivate: [AuthGuard], loadChildren: () => import('./pages/laws/laws.module').then((m) => m.LawsModule)
-  },{
-    path: 'aptitude-test', canActivate: [AuthGuard], loadChildren: () => import('./common/pages/aptitude-test/aptitude-test.module').then((m) => m.AptitudeTestModule)
   }
 ];
 

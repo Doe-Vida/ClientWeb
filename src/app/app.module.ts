@@ -26,7 +26,6 @@ import { BackToolbarModule } from './common/components/back-toolbar/back-toolbar
     CommonModule,
     Interceptor,
     ToastModule,
-    BackToolbarModule,
   ],
   providers: [
     LoginService,

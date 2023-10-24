@@ -14,6 +14,9 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { CarouselModule } from 'primeng/carousel';
 import { LoadingModule } from 'src/app/common/components/loading/loading/loading.module';
+import { AptitudeTestComponent } from './pages/aptitude-test/aptitude-test.component';
+import { BackToolbarModule } from 'src/app/common/components/back-toolbar/back-toolbar.component.module';
+import { ButtonCommonModule } from 'src/app/common/components/button-common/button-common.module';
 
 const routes: Routes = [
   {
@@ -21,6 +24,9 @@ const routes: Routes = [
   },
   {
     path: 'editar', component: EditarComponent
+  },
+  {
+    path: 'aptitudeTest', component: AptitudeTestComponent
   }
 ]
 
@@ -32,7 +38,8 @@ const routes: Routes = [
     BottonEditComponent,
     EditarComponent,
     CardDonationStepComponent,
-    CarrouselGetInpiredComponent
+    CarrouselGetInpiredComponent,
+    AptitudeTestComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +48,9 @@ const routes: Routes = [
     LoadingModule,
     ReactiveFormsModule,
     CarouselModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    BackToolbarModule,
+    ButtonCommonModule
   ],
   providers: [
     IbgeService,
