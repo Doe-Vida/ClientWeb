@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit, OnDestroy{
     private formBuilder: FormBuilder,
     private _loginService: LoginService,
     private _cookieService: CookieService,
+    private messageService: MessageService,
     private _router: Router,
   ){
     this.buildResourceForm();
@@ -44,11 +45,17 @@ export class LoginComponent implements OnInit, OnDestroy{
     const request = this._loginService.login(this.login);
     const resultado = request.subscribe((response: BaseResult) => {
       if(response.success){
-        this._cookieService.set('login', this.login.username, 1/24);
-        this._cookieService.set('access_token', response.data.access_token, 1/24);
-        this._router.navigate(['/home']);
+        this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Entrando...' });
+        setTimeout(() => {
+          this._cookieService.set('login', this.login.username, 1/24);
+          this._cookieService.set('access_token', response.data.access_token, 1/24);
+          this._router.navigate(['/home']);
+        },2000);
       }
-    });
+    }, ((error: Error) =>{
+      this.loading = false;
+      this.messageService.add({ severity: 'error', summary: 'Erro', detail: `${error.stack}` });
+    }));
     this.unsubscribe.push(resultado);
   }
 
