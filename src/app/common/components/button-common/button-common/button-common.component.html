@@ -3,6 +3,7 @@
   [disabled]="!resourceForm?.valid"
   routerLink="{{ redirectTo }}"
   [ngClass]="!resourceForm?.valid ? 'button-common-disabled' : 'button-common'"
+  (click)="click()"
 >
   {{ buttonTitle }}
 </button>

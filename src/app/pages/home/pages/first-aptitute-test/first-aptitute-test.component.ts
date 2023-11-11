@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Questions } from '../shared/first-aptitute/first-aptitute-test.model';
 import { FirstAptitudeTestService } from '../shared/first-aptitute/first-aptitude-test.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-first-aptitute-test',
@@ -11,6 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FirstAptituteTestComponent implements OnInit{
   resourceForm!: FormGroup;
   first_questions = new Array<Questions>();
+  showUnfitCard: boolean = false;
+  showSucessCard: boolean = false;
 
   constructor(
     private readonly _questionsService: FirstAptitudeTestService,
@@ -35,5 +37,26 @@ export class FirstAptituteTestComponent implements OnInit{
 
   listAllQuestionsAboutFirstTest(): Array<Questions> {
     return this._questionsService.getAllFirstQuestions();
+  }
+
+  validateQuestions(): void {
+    const existFalseAnswer = this.hasFalseValue();
+    if(existFalseAnswer){
+      this.showUnfitCard = true;
+    }else{
+      this.showSucessCard = true;
+    }
+  }
+
+  hasFalseValue(): boolean {
+    for (const controlName in this.resourceForm.controls) {
+      if (this.resourceForm.controls.hasOwnProperty(controlName)) {
+        const control: AbstractControl | null = this.resourceForm.get(controlName);
+        if (control && control.value === false) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }
