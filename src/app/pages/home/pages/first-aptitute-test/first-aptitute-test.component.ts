@@ -12,7 +12,7 @@ export class FirstAptituteTestComponent implements OnInit{
   resourceForm!: FormGroup;
   first_questions = new Array<Questions>();
   showUnfitCard: boolean = false;
-  showSucessCard: boolean = false;
+  showSucessCard: boolean = true;
 
   constructor(
     private readonly _questionsService: FirstAptitudeTestService,
