@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-button-common',
@@ -7,4 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonCommonComponent {
   @Input() buttonTitle!: string;
+  @Input() redirectTo!: string;
+  @Input() resourceForm?: FormGroup;
 }

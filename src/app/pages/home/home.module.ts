@@ -17,6 +17,8 @@ import { LoadingModule } from 'src/app/common/components/loading/loading/loading
 import { AptitudeTestComponent } from './pages/aptitude-test/aptitude-test.component';
 import { BackToolbarModule } from 'src/app/common/components/back-toolbar/back-toolbar.component.module';
 import { ButtonCommonModule } from 'src/app/common/components/button-common/button-common.module';
+import { FirstAptituteTestComponent } from './pages/first-aptitute-test/first-aptitute-test.component';
+import { FirstAptitudeTestService } from './pages/shared/first-aptitute/first-aptitude-test.service';
 
 const routes: Routes = [
   {
@@ -27,6 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'aptitudeTest', component: AptitudeTestComponent
+  },
+  {
+    path: 'firstAptitudeTest', component: FirstAptituteTestComponent
   }
 ]
 
@@ -39,7 +44,8 @@ const routes: Routes = [
     EditarComponent,
     CardDonationStepComponent,
     CarrouselGetInpiredComponent,
-    AptitudeTestComponent
+    AptitudeTestComponent,
+    FirstAptituteTestComponent
   ],
   imports: [
     CommonModule,
@@ -50,11 +56,12 @@ const routes: Routes = [
     CarouselModule,
     RouterModule.forChild(routes),
     BackToolbarModule,
-    ButtonCommonModule
+    ButtonCommonModule,
   ],
   providers: [
     IbgeService,
     MessageService,
+    FirstAptitudeTestService,
   ]
 })
 export class HomeModule { }

@@ -10,3 +10,15 @@
   text-align: center;
   cursor: pointer;
 }
+.button-common-disabled{
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  background-color: var(--gray-100);
+  border: 0;
+  color: white;
+  font-weight: 700;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+}

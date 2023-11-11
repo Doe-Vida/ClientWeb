@@ -12,6 +12,7 @@ export class AppComponent {
   routesCantUseFooterToolbar: string[] = [
     '/home/editar',
     '/home/aptitudeTest',
+    '/home/firstAptitudeTest',
     '/account/login',
     '/account/create',
     '/account/principal',
