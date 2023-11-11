@@ -42,8 +42,10 @@ export class FirstAptituteTestComponent implements OnInit{
   validateQuestions(): void {
     const existFalseAnswer = this.hasFalseValue();
     if(existFalseAnswer){
+      this.resourceForm.reset();
       this.showUnfitCard = true;
     }else{
+      this.resourceForm.reset();
       this.showSucessCard = true;
     }
   }

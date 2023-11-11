@@ -19,6 +19,7 @@ import { BackToolbarModule } from 'src/app/common/components/back-toolbar/back-t
 import { ButtonCommonModule } from 'src/app/common/components/button-common/button-common.module';
 import { FirstAptituteTestComponent } from './pages/first-aptitute-test/first-aptitute-test.component';
 import { FirstAptitudeTestService } from './pages/shared/first-aptitute/first-aptitude-test.service';
+import { CardMessageModule } from 'src/app/common/components/card-message/card-message.module';
 
 const routes: Routes = [
   {
@@ -57,6 +58,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     BackToolbarModule,
     ButtonCommonModule,
+    CardMessageModule,
   ],
   providers: [
     IbgeService,

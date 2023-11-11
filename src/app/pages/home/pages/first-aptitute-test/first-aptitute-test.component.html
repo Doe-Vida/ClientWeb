@@ -141,3 +141,7 @@
     (onClick)="validateQuestions()"
   ></app-button-common>
 </div>
+
+<div *ngIf="showUnfitCard" class="unfit-card">
+  <app-card-message [message]="'error'"></app-card-message>
+</div>
