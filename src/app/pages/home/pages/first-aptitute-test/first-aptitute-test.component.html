@@ -142,6 +142,13 @@
   ></app-button-common>
 </div>
 
-<div *ngIf="showUnfitCard" class="unfit-card">
-  <app-card-message [message]="'error'"></app-card-message>
+<div *ngIf="showUnfitCard || showSucessCard" class="unfit-card">
+  <app-card-message
+    *ngIf="showUnfitCard"
+    [message]="'error'"
+  ></app-card-message>
+  <app-card-message
+    *ngIf="showSucessCard"
+    [message]="'success'"
+  ></app-card-message>
 </div>
