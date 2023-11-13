@@ -1,5 +1,5 @@
 <router-outlet>
-  <div *ngIf="isAuthenticated() && !isEditarRoute()">
+  <div *ngIf="isAuthenticated() && !RoutesCantUseFooterToolbar()">
     <app-footer-toolbar></app-footer-toolbar>
   </div>
 </router-outlet>

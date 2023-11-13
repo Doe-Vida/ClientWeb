@@ -1,0 +1,14 @@
+<button
+  *ngIf="resourceForm; else novaAcao"
+  [disabled]="!resourceForm?.valid"
+  routerLink="{{ redirectTo }}"
+  [ngClass]="!resourceForm?.valid ? 'button-common-disabled' : 'button-common'"
+  (click)="click()"
+>
+  {{ buttonTitle }}
+</button>
+<ng-template #novaAcao>
+  <button routerLink="{{ redirectTo }}" class="button-common">
+    {{ buttonTitle }}
+  </button>
+</ng-template>

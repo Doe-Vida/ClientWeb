@@ -9,14 +9,28 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent {
   title = 'Doe vida';
-
+  routesCantUseFooterToolbar: string[] = [
+    '/home/editar',
+    '/home/aptitudeTest',
+    '/home/firstAptitudeTest',
+    '/account/login',
+    '/account/create',
+    '/account/principal',
+    '/account/forgot-password',
+  ]
   constructor(
     private _cookieService: CookieService,
     private router: Router
   ){}
 
-  isEditarRoute(): boolean {
-    return this.router.url === '/home/editar';
+  RoutesCantUseFooterToolbar(): boolean {
+    const currentUrl = this.router.url;
+    for (const route of this.routesCantUseFooterToolbar) {
+      if (currentUrl.includes(route)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   isAuthenticated(): boolean {

@@ -1,5 +1,6 @@
 <div class="section">
   <div class="header">
+    <p-toast></p-toast>
     <button routerLink="../principal">
       <i class="pi pi-angle-left"></i>
     </button>
@@ -7,16 +8,21 @@
   </div>
   <div class="body">
     <form [formGroup]="form" class="body-form">
-      <img src="../../../../../assets/login.png" alt="Criar conta">
-      <input type="text" placeholder="Email" formControlName="username"/>
-      <input type="password" placeholder="Senha" formControlName="password"/>
+      <img src="../../../../../assets/login.png" alt="Criar conta" />
+      <input type="text" placeholder="Email" formControlName="username" />
+      <input type="password" placeholder="Senha" formControlName="password" />
       <button
         [ngClass]="!form.valid ? 'disabled' : 'submit'"
         [disabled]="!form.valid"
         (click)="salvar()"
-        type="submit">Login</button>
+        type="submit"
+      >
+        Login
+      </button>
       <div class="button-without-login">
-        <p>Esqueceu sua senha? <a routerLink="../forgot-password">clique aqui</a></p>
+        <p>
+          Esqueceu sua senha? <a routerLink="../forgot-password">clique aqui</a>
+        </p>
       </div>
       <div *ngIf="loading">
         <app-loading></app-loading>

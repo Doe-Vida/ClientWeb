@@ -1,0 +1,33 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="header" *ngIf="message == 'error'">
+      <span class="close">&times;</span>
+    </div>
+    <div class="body">
+      <img
+        [src]="
+          message == 'error'
+            ? '../../../../../assets/inapt.png'
+            : '../../../../../assets/apt.png'
+        "
+        alt="Person Image"
+      />
+      <h1 *ngIf="message == 'error'">Poxa 😕</h1>
+      <h1 *ngIf="message == 'success'">Eba! 🎉</h1>
+      <p *ngIf="message == 'error'">
+        Infelizmente você está inapto(a) e não pode realizar a doação de sangue.
+      </p>
+      <p *ngIf="message == 'success'">
+        Você está apto(a) e pode realizar a doação de sangue.
+      </p>
+      <p *ngIf="message == 'success'">
+        De acordo com o primeiro teste, você está apto(a) e pode doar. Deseja
+        fazer o segundo para ter uma resposta mais exata?
+      </p>
+      <div class="buttons">
+        <button class="none">NÃO</button>
+        <button class="accept">SIM</button>
+      </div>
+    </div>
+  </div>
+</div>

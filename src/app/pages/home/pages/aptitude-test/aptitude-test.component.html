@@ -1,0 +1,26 @@
+<app-back-toolbar
+  [rotaLink]="'/home'"
+  [Title]="'Teste de aptidão'"
+></app-back-toolbar>
+<div class="aptitude">
+  <div class="aptitude header">
+    <img
+      src="../../../../../assets/checklist test 1.png"
+      alt="Teste de aptidão"
+    />
+  </div>
+  <div class="aptitude body">
+    <h1>
+      O teste de aptidão tem o propósito de verificar se você está apto para
+      doação sanguínea.
+    </h1>
+    <p>
+      Serão realizados dois testes, o primeiro é menor e possui perguntas
+      básicas, já o segundo é mais completo e possui perguntas mais especificas.
+    </p>
+  </div>
+  <app-button-common
+    [redirectTo]="'/home/firstAptitudeTest'"
+    [buttonTitle]="'INICIAR TESTE'"
+  ></app-button-common>
+</div>

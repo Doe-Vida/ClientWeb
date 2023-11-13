@@ -9,7 +9,9 @@ import { Interceptor } from './common/interceptor/app.interceptor.module';
 import { LoginService } from './pages/account/pages/shared/services/login/login.service';
 import { FooterToolbarComponent } from './common/components/footer-toolbar/footer-toolbar.component';
 import { RouterModule } from '@angular/router';
-
+import { BackToolbarComponent } from './common/components/back-toolbar/back-toolbar.component';
+import { ToastModule } from 'primeng/toast';
+import { BackToolbarModule } from './common/components/back-toolbar/back-toolbar.component.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     CommonModule,
     Interceptor,
+    ToastModule,
   ],
   providers: [
     LoginService,

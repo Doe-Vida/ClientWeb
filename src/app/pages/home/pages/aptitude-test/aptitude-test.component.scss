@@ -1,0 +1,19 @@
+.aptitude{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  .body{
+    h1{
+      font-size: 20px;
+      text-align: center;
+    }
+    p{
+      margin-top: 10px;
+      text-align: center;
+      color: var(--gray-500);
+    }
+    margin-bottom: 10%;
+  }
+}

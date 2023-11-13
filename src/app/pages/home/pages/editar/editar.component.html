@@ -1,40 +1,91 @@
 <div class="header">
   <p-toast></p-toast>
   <button routerLink="/home">
-    <i class="pi pi-angle-left" ></i>
+    <i class="pi pi-angle-left"></i>
   </button>
   <p>Perfil</p>
 </div>
 <div class="form" *ngIf="entity; else load">
   <form [formGroup]="form">
     <div class="profile-container">
-      <img class="profile-photo" src="../../../../../assets/image-user.jpeg" alt="Usuário">
+      <img
+        class="profile-photo"
+        src="../../../../../assets/image-user.jpeg"
+        alt="Usuário"
+      />
       <div class="edit-button">
-        <img src="../../../../../assets/Group.png" alt="Alterar foto" (click)="openFileInput()">
-        <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
+        <img
+          src="../../../../../assets/Group.png"
+          alt="Alterar foto"
+          (click)="openFileInput()"
+        />
+        <input
+          type="file"
+          #fileInput
+          style="display: none"
+          (change)="onFileSelected($event)"
+        />
       </div>
     </div>
-    <input class="style-form" type="text" placeholder="Nome" formControlName="first_name">
-    <input class="style-form" type="text" placeholder="Sobrenome" formControlName="last_name">
+    <input
+      class="style-form"
+      type="text"
+      placeholder="Nome"
+      formControlName="first_name"
+    />
+    <input
+      class="style-form"
+      type="text"
+      placeholder="Sobrenome"
+      formControlName="last_name"
+    />
     <select class="style-form" formControlName="blood_type">
       <option value="" disabled selected>Tipo sanguíneo</option>
       <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
     </select>
     <select class="style-form" formControlName="sex">
       <option value="" disabled selected>Gênero</option>
-      <option *ngFor="let sexo of sexos" [value]="sexo.type">{{ sexo.name }}</option>
+      <option *ngFor="let sexo of sexos" [value]="sexo.type">
+        {{ sexo.name }}
+      </option>
     </select>
-    <select class="style-form" (change)="loadCitys($event.target)" formControlName="state">
+    <select
+      class="style-form"
+      (change)="loadCitys($event.target)"
+      formControlName="state"
+    >
       <option disabled selected>Estado</option>
-      <option  *ngFor="let state of states" [value]="state.sigla" >{{ state.nome }}</option>
+      <option *ngFor="let state of states" [value]="state.sigla">
+        {{ state.nome }}
+      </option>
     </select>
     <select class="style-form" formControlName="city">
       <option value="" disabled selected>Cidade</option>
-      <option *ngFor="let city of citys" [value]="city.nome">{{ city.nome }}</option>
+      <option *ngFor="let city of citys" [value]="city.nome">
+        {{ city.nome }}
+      </option>
     </select>
-    <input class="style-form" type="tel" placeholder="Telefone" formControlName="phone">
-    <input class="style-form" type="date" placeholder="Data de nascimento" formControlName="birthdate">
-    <button [disabled]="!form.valid" type="submit" [ngClass]="!form.valid ? 'disabled' : 'submit'" (click)="save()">Salvar</button>
+    <input
+      class="style-form"
+      type="tel"
+      placeholder="Telefone"
+      formControlName="phone"
+      maxlength="12"
+    />
+    <input
+      class="style-form"
+      type="date"
+      placeholder="Data de nascimento"
+      formControlName="birthdate"
+    />
+    <button
+      [disabled]="!form.valid"
+      type="submit"
+      [ngClass]="!form.valid ? 'disabled' : 'submit'"
+      (click)="save()"
+    >
+      Salvar
+    </button>
   </form>
 </div>
 

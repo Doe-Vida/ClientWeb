@@ -1,0 +1,154 @@
+<app-back-toolbar
+  [rotaLink]="'/home/aptitudeTest'"
+  [Title]="'Primeiro teste de aptidão'"
+></app-back-toolbar>
+<div class="aptitude">
+  <div class="aptitude body">
+    <h1>Responda as afirmações de acordo com o que se aplica a você.</h1>
+    <form [formGroup]="resourceForm" class="group">
+      <h1>{{ first_questions[0].Question }}</h1>
+      <div class="options">
+        <label class="values">
+          <input
+            formControlName="first"
+            type="radio"
+            [value]="true"
+            [ngClass]="{ selected: first_questions[0].Value === true }"
+          />
+          Sim
+        </label>
+        <label class="values">
+          <input
+            formControlName="first"
+            type="radio"
+            [value]="false"
+            [ngClass]="{ selected: first_questions[0].Value === false }"
+          />
+          Não
+        </label>
+      </div>
+      <h1>{{ first_questions[1].Question }}</h1>
+      <div class="options">
+        <label class="values">
+          <input
+            formControlName="second"
+            type="radio"
+            [value]="true"
+            [ngClass]="{ selected: first_questions[1].Value === true }"
+          />
+          Sim
+        </label>
+        <label class="values">
+          <input
+            formControlName="second"
+            type="radio"
+            [value]="false"
+            [ngClass]="{ selected: first_questions[1].Value === false }"
+          />
+          Não
+        </label>
+      </div>
+      <h1>{{ first_questions[2].Question }}</h1>
+      <div class="options">
+        <label class="values">
+          <input
+            formControlName="third"
+            type="radio"
+            [value]="true"
+            [ngClass]="{ selected: first_questions[2].Value === true }"
+          />
+          Sim
+        </label>
+        <label class="values">
+          <input
+            formControlName="third"
+            type="radio"
+            [value]="false"
+            [ngClass]="{ selected: first_questions[2].Value === false }"
+          />
+          Não
+        </label>
+      </div>
+      <h1>{{ first_questions[3].Question }}</h1>
+      <div class="options">
+        <label class="values">
+          <input
+            formControlName="fourth"
+            type="radio"
+            [value]="true"
+            [ngClass]="{ selected: first_questions[3].Value === true }"
+          />
+          Sim
+        </label>
+        <label class="values">
+          <input
+            formControlName="fourth"
+            type="radio"
+            [value]="false"
+            [ngClass]="{ selected: first_questions[3].Value === false }"
+          />
+          Não
+        </label>
+      </div>
+      <h1>{{ first_questions[4].Question }}</h1>
+      <div class="options">
+        <label class="values">
+          <input
+            formControlName="fifth"
+            type="radio"
+            [value]="true"
+            [ngClass]="{ selected: first_questions[4].Value === true }"
+          />
+          Sim
+        </label>
+        <label class="values">
+          <input
+            formControlName="fifth"
+            type="radio"
+            [value]="false"
+            [ngClass]="{ selected: first_questions[4].Value === false }"
+          />
+          Não
+        </label>
+      </div>
+      <h1>{{ first_questions[5].Question }}</h1>
+      <div class="options">
+        <label class="values">
+          <input
+            formControlName="sixth"
+            type="radio"
+            [value]="true"
+            [ngClass]="{ selected: first_questions[5].Value === true }"
+          />
+          Sim
+        </label>
+        <label class="values">
+          <input
+            formControlName="sixth"
+            type="radio"
+            [value]="false"
+            [ngClass]="{ selected: first_questions[5].Value === false }"
+          />
+          Não
+        </label>
+      </div>
+    </form>
+  </div>
+  <app-button-common
+    [redirectTo]="'/home/firstAptitudeTest'"
+    [buttonTitle]="'VERIFICAR'"
+    [resourceForm]="resourceForm"
+    (onClick)="validateQuestions()"
+  ></app-button-common>
+</div>
+
+<div *ngIf="showUnfitCard || showSucessCard" class="unfit-card">
+  <app-card-message
+    *ngIf="showUnfitCard"
+    [message]="'error'"
+  ></app-card-message>
+  <app-card-message
+    *ngIf="showSucessCard"
+    [message]="'success'"
+  ></app-card-message>
+</div>
