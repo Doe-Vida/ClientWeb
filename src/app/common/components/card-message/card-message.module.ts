@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardMessageComponent } from './card-message/card-message.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,6 +11,7 @@ import { CardMessageComponent } from './card-message/card-message.component';
   ],
   imports: [
     CommonModule,
+    RouterModule
   ],
   exports: [
     CardMessageComponent,

@@ -20,6 +20,7 @@ import { ButtonCommonModule } from 'src/app/common/components/button-common/butt
 import { FirstAptituteTestComponent } from './pages/first-aptitute-test/first-aptitute-test.component';
 import { FirstAptitudeTestService } from './pages/shared/first-aptitute/first-aptitude-test.service';
 import { CardMessageModule } from 'src/app/common/components/card-message/card-message.module';
+import { SecondAptitudeTestComponent } from './pages/second-aptitude-test/second-aptitude-test.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,8 @@ const routes: Routes = [
   },
   {
     path: 'firstAptitudeTest', component: FirstAptituteTestComponent
+  },{
+    path: 'secondAptitudeTest', component: SecondAptitudeTestComponent
   }
 ]
 
@@ -46,7 +49,8 @@ const routes: Routes = [
     CardDonationStepComponent,
     CarrouselGetInpiredComponent,
     AptitudeTestComponent,
-    FirstAptituteTestComponent
+    FirstAptituteTestComponent,
+    SecondAptitudeTestComponent
   ],
   imports: [
     CommonModule,

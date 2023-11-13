@@ -1,0 +1,38 @@
+.aptitude{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  .body{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    align-items: start;
+    h1{
+      font-size: 20px;
+    }
+    p{
+      margin-top: 10px;
+      text-align: center;
+      color: var(--gray-500);
+    }
+    margin-bottom: 10%;
+  }
+
+  .group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    color: var(--gray-800);
+    .options{
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      .values{
+        font-size: 20px;
+      }
+    }
+  }
+}
