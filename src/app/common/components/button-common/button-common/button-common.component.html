@@ -1,8 +1,8 @@
 <button
   *ngIf="resourceForm; else novaAcao"
-  [disabled]="!resourceForm?.valid"
+  [disabled]="!resourceForm.valid"
   routerLink="{{ redirectTo }}"
-  [ngClass]="!resourceForm?.valid ? 'button-common-disabled' : 'button-common'"
+  [ngClass]="!resourceForm.valid ? 'button-common-disabled' : 'button-common'"
   (click)="click()"
 >
   {{ buttonTitle }}

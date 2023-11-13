@@ -37,7 +37,33 @@ export class FirstAptitudeTestService{
     Value: null,
   }];
 
+  second_questions: Questions[] = [{
+    Id: "0",
+    Key: "First",
+    Question: "Tenho asma brônquica grave ou antecedente de choque anafilático:",
+    Value: null,
+  },{
+    Id: "1",
+    Key: "Third",
+    Question: "Tive infecções ou uso de antibióticos, nas últimas 2 semanas:",
+    Value: null,
+  },{
+    Id: "2",
+    Key: "Fourth",
+    Question: "Realizei procedimento endoscópico nos últimos 6 meses:",
+    Value: null,
+  },{
+    Id: "3",
+    Key: "Fifth",
+    Question: "Tenho antecedentes de infecções trans- missíveis pelo sangue:",
+    Value: null,
+  }]
+
   getAllFirstQuestions(): Array<Questions> {
     return this.first_questions;
+  }
+
+  getAllSecondQuestions(): Array<Questions> {
+    return this.second_questions;
   }
 }

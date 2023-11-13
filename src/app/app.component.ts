@@ -13,6 +13,7 @@ export class AppComponent {
     '/home/editar',
     '/home/aptitudeTest',
     '/home/firstAptitudeTest',
+    '/home/secondAptitudeTest',
     '/account/login',
     '/account/create',
     '/account/principal',
