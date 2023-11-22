@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirstAptitudeTestService } from '../shared/first-aptitute/first-aptitude-test.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Questions } from '../shared/first-aptitute/first-aptitute-test.model';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-second-aptitude-test',
@@ -16,6 +17,7 @@ export class SecondAptitudeTestComponent implements OnInit{
 
   constructor(
     private readonly _questionsService: FirstAptitudeTestService,
+    private _cookieService: CookieService,
     private _fb: FormBuilder,
   ){}
 
@@ -44,6 +46,7 @@ export class SecondAptitudeTestComponent implements OnInit{
       this.showUnfitCard = true;
     }else{
       this.resourceForm.reset();
+      this._cookieService.set('aptitudeToDonate', 'true', 1/24)
       this.showSucessCard = true;
     }
   }
