@@ -22,7 +22,7 @@ export class MapComponent implements OnInit{
   }
 
   private initMap(): void {
-    this.hospitals = this.serviceMock.getAllHospitalsPosition();
+    //this.hospitals = this.serviceMock.getAllHospitalsPosition();
     this.hospitals.forEach((hospital) => {
       this.map = L.map('map').setView([-22.8683668, -47.0392479], 3);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
