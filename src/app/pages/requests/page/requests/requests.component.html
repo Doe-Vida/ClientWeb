@@ -1,4 +1,4 @@
-<div *ngIf="!apt" class="requests">
+<div *ngIf="!apt; else mainPrincipalIfApt" class="requests">
   <div class="requests body">
     <img src="../../../../../assets/login.png" alt="Doação sanguínea">
     <h1>Verificamos que você não realizou o teste de aptidão nas últimas horas,
@@ -10,4 +10,7 @@
     ></app-button-common>
   </div>
 </div>
+<ng-template #mainPrincipalIfApt>
+  <app-main></app-main>
+</ng-template>
 
