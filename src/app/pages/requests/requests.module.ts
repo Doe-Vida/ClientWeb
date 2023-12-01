@@ -7,24 +7,31 @@ import { MainComponent } from './components/main/main.component';
 import { CardModule } from './components/card/card.module';
 import { BackToolbarModule } from 'src/app/common/components/back-toolbar/back-toolbar.component.module';
 import { MessageService } from 'primeng/api';
+import { AddRequestComponent } from './page/add-request/add-request.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
   {
     path: '', component: RequestsComponent, pathMatch: 'full',
+  },{
+    path: 'add', component: AddRequestComponent
   }
 ]
 
 @NgModule({
   declarations: [
     RequestsComponent,
-    MainComponent
+    MainComponent,
+    AddRequestComponent
   ],
   imports: [
     CommonModule,
     ButtonCommonModule,
     CardModule,
     BackToolbarModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   providers: [

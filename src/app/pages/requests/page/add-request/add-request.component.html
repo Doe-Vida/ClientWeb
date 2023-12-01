@@ -1,0 +1,27 @@
+<app-back-toolbar
+  [abelToReturn]="true"
+  [rotaLink]="'/requests'"
+  [Title]="'Solicitar doação'"
+></app-back-toolbar>
+<div class="add">
+  <div class="body">
+    <form class="body-form">
+      <input type="text" placeholder="Nome completo do receptor">
+      <select>
+        <option value="" disabled selected>Tipo sanguíneo</option>
+        <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+      </select>
+      <input type="text" placeholder="Hospital">
+      <input type="text" placeholder="Cidade">
+      <input type="text" placeholder="Quantidade de bolsas">
+      <textarea cols="30" rows="10"
+        placeholder="Escreva sobre o motivo ou sobre a pessoa que está precisando da doação..."
+      ></textarea>
+    </form>
+  </div>
+  <div class="button">
+    <button  class="button-common">
+      SOLICITAR
+    </button>
+  </div>
+</div>
