@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class ButtonCommonComponent {
   @Input() buttonTitle!: string;
-  @Input() redirectTo!: string;
+  @Input() redirectTo?: string;
   @Input() resourceForm?: FormGroup;
 
   @Output() onClick = new EventEmitter();

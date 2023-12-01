@@ -18,6 +18,7 @@ export class AppComponent {
     '/account/create',
     '/account/principal',
     '/account/forgot-password',
+    '/xp/add'
   ]
   constructor(
     private _cookieService: CookieService,
