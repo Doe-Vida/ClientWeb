@@ -1,0 +1,10 @@
+.laws {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  height: 80vh;
+  overflow-y: auto; /* Adiciona a barra de rolagem vertical quando necessário */
+}
+
