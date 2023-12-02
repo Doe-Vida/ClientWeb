@@ -7,6 +7,7 @@ import { MessageService } from 'primeng/api';
 import { BaseResult } from 'src/app/common/models/BaseResult';
 import { LoginService } from '../shared/services/login/login.service';
 import { CookieService } from 'ngx-cookie-service';
+import { UserService } from 'src/app/pages/home/pages/shared/user.service';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit, OnDestroy{
   constructor(
     private formBuilder: FormBuilder,
     private _loginService: LoginService,
+    private _userService: UserService,
     private _cookieService: CookieService,
     private messageService: MessageService,
     private _router: Router,
@@ -49,6 +51,7 @@ export class LoginComponent implements OnInit, OnDestroy{
         setTimeout(() => {
           this._cookieService.set('login', this.login.username, 1/24);
           this._cookieService.set('access_token', response.data.access_token, 1/24);
+          this._userService.setUserLoged(this.login.username)
           this._router.navigate(['/home']);
         },2000);
       }

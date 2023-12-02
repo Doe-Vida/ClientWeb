@@ -1,6 +1,6 @@
 <div class="header">
   <p-toast></p-toast>
-  <button routerLink="{{ rotaLink }}">
+  <button *ngIf="abelToReturn" routerLink="{{ rotaLink }}">
     <i class="pi pi-angle-left"></i>
   </button>
   <p>{{ Title }}</p>

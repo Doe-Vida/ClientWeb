@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer-toolbar',
   templateUrl: './footer-toolbar.component.html',
   styleUrls: ['./footer-toolbar.component.scss']
 })
-export class FooterToolbarComponent {
+export class FooterToolbarComponent{
   activeTabHearth: boolean = false;
   activeTabMap: boolean = false;
   activeTabHome: boolean = true;
   activeTabLaws: boolean = false;
   activeTabXperience: boolean = false;
+
+  constructor(private router: Router){}
 
   activeTabHearthMethod(): void{
     this.activeTabHearth = true;

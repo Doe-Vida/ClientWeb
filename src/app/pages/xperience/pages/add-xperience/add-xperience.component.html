@@ -1,0 +1,16 @@
+<app-back-toolbar
+  [abelToReturn]="true"
+  [rotaLink]="'/xp'"
+  [Title]="'Compartilhar experiência'"
+></app-back-toolbar>
+<div class="add">
+  <div class="infos">
+    <span>Compartilhe sua experiência com a doação de sangue</span>
+    <textarea placeholder="Escreva aqui sua experiência" id="xp" cols="30" rows="10"></textarea>
+  </div>
+  <div class="button">
+    <button (click)="publishXperience()" class="button-common">
+      PUBLICAR
+    </button>
+  </div>
+</div>

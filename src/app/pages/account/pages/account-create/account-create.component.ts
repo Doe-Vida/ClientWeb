@@ -8,6 +8,7 @@ import { Login } from '../shared/models/login/login.model';
 import { CreateAccountService } from '../shared/services/create-account/create-account.service';
 import { LoginService } from '../shared/services/login/login.service';
 import { CookieService } from 'ngx-cookie-service';
+import { UserService } from 'src/app/pages/home/pages/shared/user.service';
 
 @Component({
   selector: 'app-account-create',
@@ -25,6 +26,7 @@ export class AccountCreateComponent{
     private formBuilder: FormBuilder,
     private _createAccountService: CreateAccountService,
     private _loginService: LoginService,
+    private _userService: UserService,
     private _cookieService: CookieService,
     private _router: Router,
     private messageService: MessageService,
@@ -51,6 +53,7 @@ export class AccountCreateComponent{
           if(response.success){
             this._cookieService.set('login', this.createAccount.username, 1/24);
             this._cookieService.set('access_token', response.data.access_token, 1/24);
+            this._userService.setUserLoged(this.createAccount.username)
             this._router.navigate(['/home/editar']);
           }
         });

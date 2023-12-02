@@ -1,0 +1,743 @@
+[
+{
+"position": {
+"latitude": -22.8287026,
+"longitude": -47.064613
+},
+"infoWindow": {
+"title": "Hemocentro Unicamp",
+"snippet": "Campinas/SP"
+}
+},
+{
+"position": {
+"latitude": -23.543817,
+"longitude": -46.649978
+},
+"infoWindow": {
+"title": "Hemocentro da Santa Casa",
+"snippet": "São Paulo/SP"
+}
+},
+{
+"position": {
+"latitude": -21.1617734,
+"longitude": -47.8511618
+},
+"infoWindow": {
+"title": "Hemocentro de Ribeirão Preto",
+"snippet": "Ribeirão Preto/SP"
+}
+},
+{
+"position": {
+"latitude": -22.329762,
+"longitude": -49.0763598
+},
+"infoWindow": {
+"title": "Hemonúcleo de Bauru",
+"snippet": "Bauru/SP"
+}
+},
+{
+"position": {
+"latitude": -20.5818193,
+"longitude": -48.5710179
+},
+"infoWindow": {
+"title": "Hospital de Câncer de Barretos",
+"snippet": "Barretos/SP"
+}
+},
+{
+"position": {
+"latitude": -23.9631917,
+"longitude": -46.3234158
+},
+"infoWindow": {
+"title": "Hemonúcleo de Santos",
+"snippet": "Santos/SP"
+}
+},
+{
+"position": {
+"latitude": -22.2914961,
+"longitude": -48.5522079
+},
+"infoWindow": {
+"title": "Hospital Amaral Carvalho",
+"snippet": "Jau/SP"
+}
+},
+{
+"position": {
+"latitude": -9.9539794,
+"longitude": -67.8215551
+},
+"infoWindow": {
+"title": "Hemoacre",
+"snippet": "Rio Branco-AC"
+}
+},
+{
+"position": {
+"latitude": 0.0426558,
+"longitude": -51.0620448
+},
+"infoWindow": {
+"title": "Hemoap",
+"snippet": "Macapá-AP"
+}
+},
+{
+"position": {
+"latitude": -3.0909317,
+"longitude": -60.0371678
+},
+"infoWindow": {
+"title": "Hemoam",
+"snippet": "Manaus/AM"
+}
+},
+{
+"position": {
+"latitude": -1.4627688,
+"longitude": -48.489452
+},
+"infoWindow": {
+"title": "Fundação HEMOPA",
+"snippet": "Belém-PA"
+}
+},
+{
+"position": {
+"latitude": -12.7373499,
+"longitude": -60.1336401
+},
+"infoWindow": {
+"title": "Fhemeron",
+"snippet": "Vilhena-RO"
+}
+},
+{
+"position": {
+"latitude": -5.4655082,
+"longitude": -47.8836358
+},
+"infoWindow": {
+"title": "Unidade de Coleta e Transfusão de Augustinópolis",
+"snippet": "Augustinópolis-TO"
+}
+},
+{
+"position": {
+"latitude": -10.1660898,
+"longitude": -48.3341822
+},
+"infoWindow": {
+"title": "Hemocentro Coordenador de Palmas",
+"snippet": "Palmas-TO"
+}
+},
+{
+"position": {
+"latitude": -7.1935898,
+"longitude": -48.21092061
+},
+"infoWindow": {
+"title": "Hemocentro Regional De Araguaína",
+"snippet": "Araguaína-TO"
+}
+},
+{
+"position": {
+"latitude": -11.7294067,
+"longitude": -49.0622353
+},
+"infoWindow": {
+"title": "Núcleo De Hemoterapia De Gurupi",
+"snippet": "Gurupi-TO"
+}
+},
+{
+"position": {
+"latitude": -9.6727139,
+"longitude": -35.760747
+},
+"infoWindow": {
+"title": "Hemoal Trapiche",
+"snippet": "Maceió-AL"
+}
+},
+{
+"position": {
+"latitude": -9.7530519,
+"longitude": -36.6666308
+},
+"infoWindow": {
+"title": "Hemoal Arapiraca",
+"snippet": "Arapiraca-AL"
+}
+},
+{
+"position": {
+"latitude": -16.2831873,
+"longitude": -44.7289799
+},
+"infoWindow": {
+"title": "HEMOBA",
+"snippet": "Várias cidades da Bahia"
+}
+},
+{
+"position": {
+"latitude": -12.5268153,
+"longitude": -40.3144589
+},
+"infoWindow": {
+"title": "UCT Hemoba",
+"snippet": "Itaberaba-BA"
+}
+},
+{
+"position": {
+"latitude": -12.9722225,
+"longitude": -38.5028962
+},
+"infoWindow": {
+"title": "STS - Banco de Sangue, Laboratório e Hematologia Clínica",
+"snippet": "Salvador-BA"
+}
+},
+{
+"position": {
+"latitude": -12.4140523,
+"longitude": -41.7720312
+},
+"infoWindow": {
+"title": "HEMOBA Seabra",
+"snippet": "Seabra-BA"
+}
+},
+{
+"position": {
+"latitude": -9.3942871,
+"longitude": -38.2186269
+},
+"infoWindow": {
+"title": "HEMOBA Paulo Afonso",
+"snippet": "Paulo Afonso-BA"
+}
+},
+{
+"position": {
+"latitude": -16.3730154,
+"longitude": -39.5753533
+},
+"infoWindow": {
+"title": "Hemocentro Regional",
+"snippet": "Eunápolis-BA"
+}
+},
+{
+"position": {
+"latitude": -13.0039096,
+"longitude": -38.5463534
+},
+"infoWindow": {
+"title": "IHEBA - Instituto de Hematologia da Bahia",
+"snippet": "Barra, Salvador-BA"
+}
+},
+{
+"position": {
+"latitude": -10.9137051,
+"longitude": -37.0938241
+},
+"infoWindow": {
+"title": "HEMOSE - Centro de Hemoterapia de Sergipe",
+"snippet": "Aracaju-SE"
+}
+},
+{
+"position": {
+"latitude": -10.9258263,
+"longitude": -37.0537326
+},
+"infoWindow": {
+"title": "IHHS - Instituto de Hematologia e Hemoterapia de Sergipe",
+"snippet": "Aracaju-SE"
+}
+},
+{
+"position": {
+"latitude": -8.0528651,
+"longitude": -34.9001603
+},
+"infoWindow": {
+"title": "Hemope - Fundação de Hematologia e Hemoterapia de Pernambuco",
+"snippet": "Recife-PE"
+}
+},
+{
+"position": {
+"latitude": -8.2800397,
+"longitude": -35.9730087
+},
+"infoWindow": {
+"title": "Hemocentro Regional Caruaru",
+"snippet": "Caruaru-PE"
+}
+},
+{
+"position": {
+"latitude": -8.8824841,
+"longitude": -36.4852762
+},
+"infoWindow": {
+"title": "Hemocentro Regional Garanhuns",
+"snippet": "Garanhuns-PE"
+}
+},
+{
+"position": {
+"latitude": -7.8816503,
+"longitude": -40.087004
+},
+"infoWindow": {
+"title": "Hemocentro Regional Ouricuri",
+"snippet": "Ouricuri-PE"
+}
+},
+{
+"position": {
+"latitude": -9.3940982,
+"longitude": -40.5025804
+},
+"infoWindow": {
+"title": "Hemocentro Regional Petrolina",
+"snippet": "Petrolina-PE"
+}
+},
+{
+"position": {
+"latitude": -8.0749529,
+"longitude": -39.1233228
+},
+"infoWindow": {
+"title": "Núcleo de Hemoterapia Regional Salgueiro",
+"snippet": "Salgueiro-PE"
+}
+},
+{
+"position": {
+"latitude": -8.0598623,
+"longitude": -34.8942077
+},
+"infoWindow": {
+"title": "Banco de Sangue Hemato",
+"snippet": "Recife-PE"
+}
+},
+{
+"position": {
+"latitude": -8.0503551,
+"longitude": -34.8950434
+},
+"infoWindow": {
+"title": "IHENE-Instituto de Hematologia do Nordeste",
+"snippet": "Recife-PE"
+}
+},
+{
+"position": {
+"latitude": -6.884406,
+"longitude": -38.5570255
+},
+"infoWindow": {
+"title": "Hemonúcleo de Cajazeiras",
+"snippet": "Cajazeiras-PB"
+}
+},
+{
+"position": {
+"latitude": -7.2397156,
+"longitude": -35.8748503
+},
+"infoWindow": {
+"title": "Hemocentro de Campina Grande",
+"snippet": "Campina Grande-PB"
+}
+},
+{
+"position": {
+"latitude": -7.1273099,
+"longitude": -34.8732918
+},
+"infoWindow": {
+"title": "Hemocentro da Paraíba",
+"snippet": "João Pessoa-PB"
+}
+},
+{
+"position": {
+"latitude": -5.8104912,
+"longitude": -35.1987654
+},
+"infoWindow": {
+"title": "Hemonorte: Dalton Cunha",
+"snippet": "Natal-RN"
+}
+},
+{
+"position": {
+"latitude": -5.1903363,
+"longitude": -37.3672419
+},
+"infoWindow": {
+"title": "Hemocentro de Mossoró",
+"snippet": "Mossoró-RN"
+}
+},
+{
+"position": {
+"latitude": -6.4594993,
+"longitude": -37.0978999
+},
+"infoWindow": {
+"title": "Hemocentro Sec Saúde",
+"snippet": "Caicó-RN"
+}
+},
+{
+"position": {
+"latitude": -6.2581288,
+"longitude": -36.5256085
+},
+"infoWindow": {
+"title": "Hemocentro de Currais Novos",
+"snippet": "Currais Novos-RN"
+}
+},
+{
+"position": {
+"latitude": -3.7391092,
+"longitude": -39.6193908
+},
+"infoWindow": {
+"title": "Hemoce Fortaleza",
+"snippet": "Fortaleza-CE"
+}
+},
+{
+"position": {
+"latitude": -6.3727579,
+"longitude": -39.3090421
+},
+"infoWindow": {
+"title": "Hemoce Iguatu",
+"snippet": "Iguatu-CE"
+}
+},
+{
+"position": {
+"latitude": -7.2257249,
+"longitude": -39.3283041
+},
+"infoWindow": {
+"title": "Hemonúcleo",
+"snippet": "Juazeiro do Norte-CE"
+}
+},
+{
+"position": {
+"latitude": -7.2375529,
+"longitude": -39.4177586
+},
+"infoWindow": {
+"title": "Hemocentro Regional de Crato",
+"snippet": "Crato-CE"
+}
+},
+{
+"position": {
+"latitude": -4.9667353,
+"longitude": -39.0269928
+},
+"infoWindow": {
+"title": "Hemocentro Regional De Quixadá",
+"snippet": "Quixadá-CE"
+}
+},
+{
+"position": {
+"latitude": -3.7490569,
+"longitude": -38.5520077
+},
+"infoWindow": {
+"title": "Centro de Hematologia e Hemoterapia do Ceará",
+"snippet": "Fortaleza-CE"
+}
+},
+{
+"position": {
+"latitude": -2.5177958,
+"longitude": -45.1031258
+},
+"infoWindow": {
+"title": "Hemomar - Pinheiro",
+"snippet": "Pinheiro-MA"
+}
+},
+{
+"position": {
+"latitude": -2.5461265,
+"longitude": -44.2849619
+},
+"infoWindow": {
+"title": "HEMOMAR",
+"snippet": "São Luís-MA"
+}
+},
+{
+"position": {
+"latitude": -5.526582,
+"longitude": -47.4894621
+},
+"infoWindow": {
+"title": "Hemomar Imperatriz",
+"snippet": "Imperatriz-MA"
+}
+},
+{
+"position": {
+"latitude": -4.5766726,
+"longitude": -44.6022281
+},
+"infoWindow": {
+"title": "Hemomar - Hemonúcleo de Pedreiras",
+"snippet": "Pedreiras-MA"
+}
+},
+{
+"position": {
+"latitude": -2.534339,
+"longitude": -44.296697
+},
+"infoWindow": {
+"title": "Haima",
+"snippet": "São Luís-MA"
+}
+},
+{
+"position": {
+"latitude": -7.5319192,
+"longitude": -46.0422179
+},
+"infoWindow": {
+"title": "HEMOMAR - Agencia De Balsas",
+"snippet": "Balsas-MA"
+}
+},
+{
+"position": {
+"latitude": -5.0894625,
+"longitude": -42.806131
+},
+"infoWindow": {
+"title": "Hemopi",
+"snippet": "Teresina-PI"
+}
+},
+{
+"position": {
+"latitude": -7.0740493,
+"longitude": -41.4687713
+},
+"infoWindow": {
+"title": "Hemocentro De Picos",
+"snippet": "Picos-PI"
+}
+},
+{
+"position": {
+"latitude": -6.7706253,
+"longitude": -43.0309932
+},
+"infoWindow": {
+"title": "Hemocentro Floriano",
+"snippet": "Floriano-PI"
+}
+},
+{
+"position": {
+"latitude": -2.9071089,
+"longitude": -41.7827893
+},
+"infoWindow": {
+"title": "Hemocentro Regional de Parnaíba",
+"snippet": "Parnaíba-PI"
+}
+},
+{
+"position": {
+"latitude": -15.6057237,
+"longitude": -56.1032447
+},
+"infoWindow": {
+"title": "MT-Hemocentro",
+"snippet": "Cuiabá-MT"
+}
+},
+{
+"position": {
+"latitude": -22.2273033,
+"longitude": -54.7853556
+},
+"infoWindow": {
+"title": "Hemocentro Dourados",
+"snippet": "Dourados-MS"
+}
+},
+{
+"position": {
+"latitude": -20.4686535,
+"longitude": -54.6113051
+},
+"infoWindow": {
+"title": "Hemosul",
+"snippet": "Campo Grande-MS"
+}
+},
+{
+"position": {
+"latitude": -20.7931101,
+"longitude": -51.6974439
+},
+"infoWindow": {
+"title": "Hemonúcleo de Três Lagoas",
+"snippet": "Três Lagoas-MS"
+}
+},
+{
+"position": {
+"latitude": -22.5309275,
+"longitude": -55.717031
+},
+"infoWindow": {
+"title": "HEMOSUL - Ponta Porã",
+"snippet": "Ponta Porã-MS"
+}
+},
+{
+"position": {
+"latitude": -18.5079698,
+"longitude": -54.7531398
+},
+"infoWindow": {
+"title": "HEMOSUL - Coxim",
+"snippet": "Coxim-MS"
+}
+},
+{
+"position": {
+"latitude": -20.5135448,
+"longitude": -54.6565746
+},
+"infoWindow": {
+"title": "Hospital Regional de Mato Grosso do Sul",
+"snippet": "Campo Grande-MS"
+}
+},
+{
+"position": {
+"latitude": -16.6758026,
+"longitude": -49.2814171
+},
+"infoWindow": {
+"title": "Hemocentro Dr. Nion Albernaz",
+"snippet": "Goiânia-GO"
+}
+},
+{
+"position": {
+"latitude": -18.1630392,
+"longitude": -47.9434217
+},
+"infoWindow": {
+"title": "Hemocentro Regional de Catalão",
+"snippet": "Catalão-GO"
+}
+},
+{
+"position": {
+"latitude": -15.3117896,
+"longitude": -49.6068364
+},
+"infoWindow": {
+"title": "Hemocentro de Ceres",
+"snippet": "Ceres-GO"
+}
+},
+{
+"position": {
+"latitude": -17.790407,
+"longitude": -50.9253184
+},
+"infoWindow": {
+"title": "Hemocentro Rio Verde",
+"snippet": "Rio Verde-GO"
+}
+},
+{
+"position": {
+"latitude": -15.5481566,
+"longitude": -47.3220492
+},
+"infoWindow": {
+"title": "UCT Formosa",
+"snippet": "Formosa-GO"
+}
+},
+{
+"position": {
+"latitude": -13.4421593,
+"longitude": -49.1527626
+},
+"infoWindow": {
+"title": "Banco de Sangue Porangatu",
+"snippet": "Porangatu-GO"
+}
+},
+{
+"position": {
+"latitude": -18.4525747,
+"longitude": -50.4477423
+},
+"infoWindow": {
+"title": "Hemocentro de Quirinópolis",
+"snippet": "Quirinópolis-GO"
+}
+},
+{
+"position": {
+"latitude": -22.2261893,
+"longitude": -45.9314543
+},
+"infoWindow": {
+"title": "Hemocentro Regional de Pouso Alegre",
+"snippet": "Pouso Alegre-MG"
+}
+},
+{
+"position": {
+"latitude": -19.9246529,
+"longitude": -43.9339109
+},
+"infoWindow": {
+"title": "Hemocentro de Belo Horizonte",
+"snippet": "Belo Horizonte-MG"
+}
+}
+]
+              

@@ -1,0 +1,66 @@
+.add {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 80vh;
+  .body-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    input, select{
+      width: 340px;
+      height: 45px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #F3F3F5;
+      border: 0;
+      color: var(--gray-10);
+      font-weight: 400;
+      transition: 1s;
+      &:hover{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      }
+      &:focus{
+        border: 2px solid var(--pink-primary);
+        outline: none;
+      }
+    }
+
+    textarea{
+      width: 340px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #F3F3F5;
+      border: 0;
+      color: var(--gray-10);
+      font-weight: 400;
+      transition: 1s;
+      &:hover{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      }
+      &:focus{
+        border: 2px solid var(--pink-primary);
+        outline: none;
+      }
+    }
+  }
+}
+
+.button-common{
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  background-color: var(--pink-primary);
+  border: 0;
+  color: white;
+  font-weight: 700;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+}

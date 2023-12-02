@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="top">
+    <div class="top-name">
+      <span>{{request?.patient_name}}</span>
+    </div>
+    <div class="top-blood-type">
+      <span>{{tipos[request?.blood_type]}}</span>
+    </div>
+  </div>
+  <div class="main">
+    <div class="describe">
+      {{request?.description}}
+    </div>
+    <div class="hospital-info">
+      <div class="icon">
+        <img src="../../../../../../assets/mapIconCard.png" alt="Localização">
+      </div>
+      <div class="infos">
+        <span>{{request?.hospital?.hospital_name}}</span>
+        <span>{{request?.hospital?.city_name}}</span>
+      </div>
+    </div>
+    <div class="request-infos">
+      <span><strong>Nome do solicitante:</strong> {{request?.requester?.first_name}} {{request?.requester?.last_name}}</span>
+      <span><strong>Telefone:</strong> {{request?.requester?.phone}}</span>
+      <span><strong>Quantidade de bolsas:</strong> {{request?.qty_bags}}</span>
+    </div>
+  </div>
+  <div class="footer">
+    <span>{{request?.date_donation_order | customDataFormatPipe}}</span>
+  </div>
+</div>

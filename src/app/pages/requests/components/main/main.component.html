@@ -1,0 +1,17 @@
+<app-back-toolbar
+  [abelToReturn]="false"
+  [Title]="'Solicitações'"
+></app-back-toolbar>
+<div class="requests">
+  <div *ngFor="let request of requests">
+    <app-card [request]="request"></app-card>
+  </div>
+  <div class="button">
+    <button class="button-add" routerLink="add">
+      <i class="pi pi-plus" style="color: white"></i>
+    </button>
+  </div>
+</div>
+<div *ngIf="loading">
+  <app-loading></app-loading>
+</div>

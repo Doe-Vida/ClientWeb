@@ -1,0 +1,26 @@
+.requests {
+  position: relative; /* Adiciona position: relative para .xperiences */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.button {
+  position: fixed; /* Torna a classe .button fixa */
+  bottom: 70px; /* Distância do bottom */
+  right: 10px; /* Distância da direita */
+}
+
+.button .button-add {
+  padding: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pink-primary);
+  border: 0;
+}

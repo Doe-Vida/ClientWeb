@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LawsComponent } from './pages/laws/laws.component';
 import { Routes, RouterModule } from '@angular/router';
+import { BackToolbarModule } from 'src/app/common/components/back-toolbar/back-toolbar.component.module';
+import { CardComponent } from './components/card/card.component';
 
 const routes: Routes = [
   {
@@ -11,10 +13,12 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    LawsComponent
+    LawsComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
+    BackToolbarModule,
     RouterModule.forChild(routes)
   ]
 })
