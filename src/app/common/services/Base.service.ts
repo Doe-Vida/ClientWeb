@@ -1,11 +1,9 @@
 import { Injector } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable, map } from "rxjs";
-import { BaseModel } from "../models/BaseModel";
 import {HttpClient} from '@angular/common/http'
 import { BaseResult } from "../models/BaseResult";
 import { environment } from "src/app/environment/environment";
-import { CookieService } from "ngx-cookie-service";
 
 export abstract class BaseService<T>{
   protected _http: HttpClient;

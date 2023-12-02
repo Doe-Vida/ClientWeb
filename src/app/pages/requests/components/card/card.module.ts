@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
+import { PipeModule } from 'src/app/common/pipe/pipe.module';
 
 
 
@@ -9,7 +10,8 @@ import { CardComponent } from './card/card.component';
     CardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PipeModule
   ],
   exports: [
     CardComponent

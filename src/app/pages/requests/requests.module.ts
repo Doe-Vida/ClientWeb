@@ -9,6 +9,8 @@ import { BackToolbarModule } from 'src/app/common/components/back-toolbar/back-t
 import { MessageService } from 'primeng/api';
 import { AddRequestComponent } from './page/add-request/add-request.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DonationRequestService } from './shared/service/donation-request.service';
+import { LoadingModule } from 'src/app/common/components/loading/loading/loading.module';
 
 
 const routes: Routes = [
@@ -28,6 +30,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     ButtonCommonModule,
+    LoadingModule,
     CardModule,
     BackToolbarModule,
     FormsModule,
@@ -35,7 +38,8 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   providers: [
-    MessageService
+    MessageService,
+    DonationRequestService
   ]
 })
 export class RequestsModule { }

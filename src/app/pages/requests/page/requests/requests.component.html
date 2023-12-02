@@ -1,16 +1,2 @@
-<div *ngIf="!apt; else mainPrincipalIfApt" class="requests">
-  <div class="requests body">
-    <img src="../../../../../assets/login.png" alt="Doação sanguínea">
-    <h1>Verificamos que você não realizou o teste de aptidão nas últimas horas,
-      para prosseguir é necessário responder
-    </h1>
-    <app-button-common
-      [buttonTitle]="'Quero responder'"
-      [redirectTo]="'/home/aptitudeTest'"
-    ></app-button-common>
-  </div>
-</div>
-<ng-template #mainPrincipalIfApt>
-  <app-main></app-main>
-</ng-template>
+<app-main></app-main>
 
