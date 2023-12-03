@@ -34,11 +34,11 @@ export class AddRequestComponent implements OnInit, OnDestroy{
     private _router: Router,
     private _fb: FormBuilder
   ){
+    this.buidResourceForm();
   }
 
   ngOnInit(): void {
     this.user = this._userService.getUserLoged();
-    this.buidResourceForm();
     this.loadHospitalList();
   }
 
