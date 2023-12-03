@@ -5,23 +5,34 @@
 ></app-back-toolbar>
 <div class="add">
   <div class="body">
-    <form class="body-form">
-      <input type="text" placeholder="Nome completo do receptor">
-      <select>
+    <form [formGroup]="form" class="body-form">
+      <input type="text" placeholder="Nome completo do receptor" formControlName="patient_name">
+      <select formControlName="blood_type">
         <option value="" disabled selected>Tipo sanguíneo</option>
         <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
       </select>
-      <input type="text" placeholder="Hospital">
-      <input type="text" placeholder="Cidade">
-      <input type="text" placeholder="Quantidade de bolsas">
+      <select formControlName="hospital">
+        <option value="" disabled selected>Hospital</option>
+        <option *ngFor="let tipo of hospitals" [value]="tipo.hospital_name">{{ tipo.hospital_name }}</option>
+      </select>
+      <input type="number" placeholder="Quantidade de bolsas" formControlName="qty_bags">
       <textarea cols="30" rows="10"
         placeholder="Escreva sobre o motivo ou sobre a pessoa que está precisando da doação..."
+        formControlName="description"
       ></textarea>
+      <div class="button">
+        <button
+          [ngClass]="!form.valid ? 'button-common disabled' : 'button-common submit'"
+          [disabled]="!form.valid"
+          (click)="sendRequest()"
+          type="submit"
+        >
+          SOLICITAR
+        </button>
+      </div>
     </form>
   </div>
-  <div class="button">
-    <button  class="button-common">
-      SOLICITAR
-    </button>
-  </div>
+</div>
+<div *ngIf="loading">
+  <app-loading></app-loading>
 </div>

@@ -26,6 +26,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     const email = this._cookieService.get('login');
     const request = this._userService.getByName(email).subscribe((response: BaseResult) => {
       this.entity = response.data;
+      this._userService.setUserLoged(email);
     });
     this._unsubscribe.push(request);
   }
