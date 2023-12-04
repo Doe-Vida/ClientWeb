@@ -126,8 +126,8 @@ export class EditarComponent implements OnInit, OnDestroy{
           this.fotoUrl = image;
           this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Imagem atualizada' });
           setTimeout(() => {
-            this._router.navigate(['/home']);
-          }, 3000);
+            this.ngOnInit();
+          }, 1000);
         }
       });
       this._unsubscribe.push(sub);
