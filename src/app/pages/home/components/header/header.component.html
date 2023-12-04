@@ -3,7 +3,7 @@
     <img src="../../../../../assets/bell-ring.png" alt="Notificações">
   </div>
   <div class="user-info">
-    <img src="../../../../../assets/default-avatar-icon-of-social-media-user-vector.jpg" alt="Imagem usuário" />
+    <img [src]="fotoUrl ?? '../../../../../assets/default-avatar-icon-of-social-media-user-vector.jpg'" alt="Imagem usuário" />
     <div class="info">
       <h3>{{entity.first_name ?? '-'}} {{entity.last_name}}</h3>
       <p>{{entity.qty_donations ?? '0'}} doações</p>

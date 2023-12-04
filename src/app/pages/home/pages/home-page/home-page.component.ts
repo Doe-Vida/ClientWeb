@@ -12,6 +12,7 @@ import { UserService } from '../shared/user.service';
 export class HomePageComponent implements OnInit, OnDestroy {
   public _unsubscribe = new Array<Subscription>();
   @Output() entity!: User;
+  @Output() fotoUrl?: string;
 
   constructor(
     private _userService: UserService,
@@ -26,6 +27,10 @@ export class HomePageComponent implements OnInit, OnDestroy {
     const email = this._cookieService.get('login');
     const request = this._userService.getByName(email).subscribe((response: BaseResult) => {
       this.entity = response.data;
+      if(this.entity.photo){
+        let image = `data:image/jpeg;base64,${this.entity.photo}`
+        this.fotoUrl = image;
+      }
       this._userService.setUserLoged(email);
     });
     this._unsubscribe.push(request);

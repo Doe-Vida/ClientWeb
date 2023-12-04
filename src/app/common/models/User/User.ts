@@ -7,6 +7,7 @@ export class User{
   public id?: string
   public last_name?: string
   public password?: string
+  public photo?: string
   public phone?: string
   public qty_donations?: string
   public sex?: boolean
