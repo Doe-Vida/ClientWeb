@@ -21,6 +21,7 @@ import { FirstAptituteTestComponent } from './pages/first-aptitute-test/first-ap
 import { FirstAptitudeTestService } from './pages/shared/first-aptitute/first-aptitude-test.service';
 import { CardMessageModule } from 'src/app/common/components/card-message/card-message.module';
 import { SecondAptitudeTestComponent } from './pages/second-aptitude-test/second-aptitude-test.component';
+import { ImageService } from 'src/app/common/services/image/image.service';
 
 const routes: Routes = [
   {
@@ -68,6 +69,7 @@ const routes: Routes = [
     IbgeService,
     MessageService,
     FirstAptitudeTestService,
+    ImageService
   ]
 })
 export class HomeModule { }
