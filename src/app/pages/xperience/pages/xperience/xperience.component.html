@@ -13,7 +13,7 @@
       [post]="post"
     ></app-card>
   </div>
-  <div class="nothing" *ngIf="posts.length == 0">
+  <div class="nothing" *ngIf="posts.length == 0 && loading">
     <span>Sem experiências compartilhadas, seja o primeiro 😊</span>
   </div>
 </div>

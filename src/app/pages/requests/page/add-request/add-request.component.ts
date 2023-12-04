@@ -10,6 +10,7 @@ import { DonationRequestPostService } from '../../shared/service/donation-reques
 import { RequestDonationPost } from '../../shared/models/Donation_request/donation-request-post';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-add-request',
@@ -28,17 +29,18 @@ export class AddRequestComponent implements OnInit, OnDestroy{
 
   constructor(
     private _userService: UserService,
+    private _cookieService: CookieService,
     private _hospitalService: HospitalService,
     private _postRequest: DonationRequestPostService,
     private messageService: MessageService,
     private _router: Router,
     private _fb: FormBuilder
-  ){
-    this.buidResourceForm();
-  }
+    ){
+      this.buidResourceForm();
+    }
 
-  ngOnInit(): void {
-    this.user = this._userService.getUserLoged();
+    ngOnInit(): void {
+    this.getUser();
     this.loadHospitalList();
   }
 
@@ -49,7 +51,6 @@ export class AddRequestComponent implements OnInit, OnDestroy{
       description: ['', [Validators.required]],
       qty_bags: ['', [Validators.required]],
       hospital: ['', [Validators.required]],
-      requester: [this.user?.id] // id do usuário logado
     })
   }
 
@@ -60,9 +61,22 @@ export class AddRequestComponent implements OnInit, OnDestroy{
     this.unsubscribe.push(sub)
   }
 
+  getUser(): void{
+    const email = this._cookieService.get("login")
+    const sub = this._userService.getByName(email).subscribe((response:BaseResult) => {
+      this.user = response.data
+      //console.log(this.user)
+    });
+    this.unsubscribe.push(sub);
+  }
+
   sendRequest(): void{
     this.loading = true;
     this.request = Object.assign({}, new RequestDonationPost(), this.form.value);
+    if (this.request && this.user) {
+      this.request.requester = this.user.id;
+    }
+    //console.log(this.request)
     const sub = this._postRequest.post(this.request).subscribe((result: BaseResult) => {
       if(result.success){
         this.loading = false;

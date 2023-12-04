@@ -9,6 +9,8 @@ import { ButtonCommonModule } from 'src/app/common/components/button-common/butt
 import { XpService } from './shared/service/xp.service';
 import { MessageService } from 'primeng/api';
 import { LoadingModule } from 'src/app/common/components/loading/loading/loading.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from '../home/pages/shared/user.service';
 
 const routes: Routes = [
   {
@@ -29,11 +31,14 @@ const routes: Routes = [
     LoadingModule,
     BackToolbarModule,
     ButtonCommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   providers:[
     XpService,
-    MessageService
+    MessageService,
+    UserService
   ]
 })
 export class XperienceModule { }

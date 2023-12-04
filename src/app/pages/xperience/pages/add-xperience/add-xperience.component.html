@@ -3,14 +3,25 @@
   [rotaLink]="'/xp'"
   [Title]="'Compartilhar experiência'"
 ></app-back-toolbar>
-<div class="add">
-  <div class="infos">
-    <span>Compartilhe sua experiência com a doação de sangue</span>
-    <textarea placeholder="Escreva aqui sua experiência" id="xp" cols="30" rows="10"></textarea>
-  </div>
-  <div class="button">
-    <button (click)="publishXperience()" class="button-common">
-      PUBLICAR
-    </button>
-  </div>
+<div>
+  <form class="add" [formGroup]="form">
+    <div class="infos">
+      <span>Compartilhe sua experiência com a doação de sangue</span>
+      <input type="text" placeholder="Título da experiência" formControlName="title">
+      <textarea placeholder="Escreva aqui sua experiência" id="xp" cols="30" rows="10" formControlName="content"></textarea>
+    </div>
+    <div class="button">
+      <button
+        [ngClass]="!form.valid ? 'button-common disabled' : 'button-common submit'"
+        [disabled]="!form.valid"
+        (click)="publishXperience()"
+        type="submit"
+      >
+        PUBLICAR
+      </button>
+    </div>
+  </form>
+</div>
+<div *ngIf="loading">
+  <app-loading></app-loading>
 </div>
