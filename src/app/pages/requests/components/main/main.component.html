@@ -3,7 +3,19 @@
   [Title]="'Solicitações'"
 ></app-back-toolbar>
 <div class="requests">
-  <div *ngFor="let request of requests">
+  <div class="filter">
+    <!-- <div class="check">
+      <span>Minhas solicitações</span>
+      <input type="checkbox" name="myRequests" (change)="handleCheckboxChange($event)">
+    </div> -->
+    <input
+      class="search"
+      type="text"
+      placeholder="Pesquise o paciente aqui"
+      (input)="handleSearch($event)"
+    >
+  </div>
+  <div *ngFor="let request of requestsCopy">
     <app-card [request]="request"></app-card>
   </div>
   <div class="button">

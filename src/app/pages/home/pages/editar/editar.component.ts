@@ -10,6 +10,7 @@ import { BaseResult } from 'src/app/common/models/BaseResult';
 import { CookieService } from 'ngx-cookie-service';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { ImageService } from 'src/app/common/services/image/image.service';
 
 interface Sexo{
   type: boolean;
@@ -23,13 +24,14 @@ interface Sexo{
 })
 export class EditarComponent implements OnInit, OnDestroy{
 
-  public tipos: string[] = ['A+','A-','B+','B-','AB+','AB-','O+','O-'];
-  public sexos: Sexo[] = [{type: false, name: "M"},{type: true, name: "F"}];
-  public states = new Array<Estado>();
-  public citys = new Array<Municipio>();
-  public _unsubscribe = new Array<Subscription>();
-  public form!: FormGroup;
-  public entity!: User
+  tipos: string[] = ['A+','A-','B+','B-','AB+','AB-','O+','O-'];
+  sexos: Sexo[] = [{type: false, name: "M"},{type: true, name: "F"}];
+  states = new Array<Estado>();
+  citys = new Array<Municipio>();
+  form!: FormGroup;
+  entity!: User
+  fotoUrl?: string;
+  private _unsubscribe = new Array<Subscription>();
 
   loading: boolean = false;
 
@@ -38,12 +40,12 @@ export class EditarComponent implements OnInit, OnDestroy{
   constructor(
     private readonly _ibgeService: IbgeService,
     private _userService: UserService,
+    private imageService: ImageService,
     private _cookieService: CookieService,
     private _router: Router,
     private messageService: MessageService,
     private formBuilder: FormBuilder,
   ){
-
   }
 
   buildResourceForm(): void {
@@ -66,6 +68,10 @@ export class EditarComponent implements OnInit, OnDestroy{
     const email = this._cookieService.get('login');
     const request = this._userService.getByName(email).subscribe((response: BaseResult) => {
       this.entity = response.data;
+      if(this.entity.photo){
+        let image = `data:image/jpeg;base64,${this.entity.photo}`
+        this.fotoUrl = image;
+      }
       this.buildResourceForm();
     });
     this._unsubscribe.push(request);
@@ -114,7 +120,17 @@ export class EditarComponent implements OnInit, OnDestroy{
     const file = inputElement.files?.[0];
 
     if (file) {
-      console.log('Arquivo selecionado:', file);
+      const sub = this.imageService.enviarImagem(file, this.entity.username).subscribe((result: BaseResult) => {
+        if(result.message == 'Arquivo recebido com sucesso'){
+          let image = `data:image/jpeg;base64,${this.entity.photo}`
+          this.fotoUrl = image;
+          this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Imagem atualizada' });
+          setTimeout(() => {
+            this.ngOnInit();
+          }, 1000);
+        }
+      });
+      this._unsubscribe.push(sub);
     }
   }
 

@@ -8,4 +8,5 @@ import { User } from 'src/app/common/models/User/User';
 })
 export class HeaderComponent{
   @Input() entity!: User;
+  @Input() fotoUrl?: string
 }

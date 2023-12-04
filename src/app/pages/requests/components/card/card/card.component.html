@@ -4,7 +4,7 @@
       <span>{{request?.patient_name}}</span>
     </div>
     <div class="top-blood-type">
-      <span>{{tipos[request?.blood_type]}}</span>
+      <span>{{request?.blood_type}}</span>
     </div>
   </div>
   <div class="main">
@@ -21,12 +21,17 @@
       </div>
     </div>
     <div class="request-infos">
-      <span><strong>Nome do solicitante:</strong> {{request?.requester?.first_name}} {{request?.requester?.last_name}}</span>
-      <span><strong>Telefone:</strong> {{request?.requester?.phone}}</span>
+      <span><strong>Nome do solicitante:</strong> {{request?.requester?.first_name ?? ''}} {{request?.requester?.last_name ?? ''}}</span>
+      <span><strong>Telefone:</strong> {{request?.requester?.phone ?? ''}}</span>
       <span><strong>Quantidade de bolsas:</strong> {{request?.qty_bags}}</span>
     </div>
   </div>
   <div class="footer">
+    <img
+      *ngIf="!request?.requester?.photo"
+      src="../../../../../../assets/default-avatar-icon-of-social-media-user-vector.jpg"
+      alt="Usuário solicitante"
+    >
     <span>{{request?.date_donation_order | customDataFormatPipe}}</span>
   </div>
 </div>

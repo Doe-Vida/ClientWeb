@@ -1,15 +1,12 @@
 <div class="card">
   <div class="top">
     <div class="top-name">
-      <span>Camilla Floriano</span>
+      <span>{{post?.user?.first_name}} {{post?.user?.last_name}}</span>
     </div>
   </div>
   <div class="main">
     <div class="description">
-      A motivação principal foi de poder ajudar e até salvar a vida de alguém. Sempre convivi com pessoas que necessitavam de
-      sangue constantemente e saber que os estoques estavam tão baixos, me preocupou muito. Doar sangue é doar vida. Uma picada
-      se agulha não é nada em comparação a gratificação que você sente ao poder ajudar alguém, o processo é todo muito seguro,
-      você não vai se arrepender.
+      {{post?.content}}
     </div>
   </div>
 </div>

@@ -7,6 +7,41 @@
   gap: 10px;
   height: 80vh;
   overflow-y: auto;
+  .filter{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+    .check{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      span{
+        font-size: 13px;
+        color: var(--gray-700);
+      }
+    }
+    .search{
+      width: 340px;
+      height: 45px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #F3F3F5;
+      border: 0;
+      color: var(--gray-10);
+      font-weight: 400;
+      transition: 1s;
+      &:hover{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      }
+      &:focus{
+        border: 2px solid var(--pink-primary);
+        outline: none;
+      }
+    }
+  }
 }
 
 .button {

@@ -6,6 +6,11 @@ import { BackToolbarModule } from 'src/app/common/components/back-toolbar/back-t
 import { CardComponent } from './components/card/card.component';
 import { AddXperienceComponent } from './pages/add-xperience/add-xperience.component';
 import { ButtonCommonModule } from 'src/app/common/components/button-common/button-common.module';
+import { XpService } from './shared/service/xp.service';
+import { MessageService } from 'primeng/api';
+import { LoadingModule } from 'src/app/common/components/loading/loading/loading.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from '../home/pages/shared/user.service';
 
 const routes: Routes = [
   {
@@ -23,9 +28,17 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    LoadingModule,
     BackToolbarModule,
     ButtonCommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
+  ],
+  providers:[
+    XpService,
+    MessageService,
+    UserService
   ]
 })
 export class XperienceModule { }

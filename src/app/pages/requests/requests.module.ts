@@ -11,6 +11,8 @@ import { AddRequestComponent } from './page/add-request/add-request.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DonationRequestService } from './shared/service/donation-request.service';
 import { LoadingModule } from 'src/app/common/components/loading/loading/loading.module';
+import { HospitalService } from 'src/app/common/services/hospital/hospital.service';
+import { DonationRequestPostService } from './shared/service/donation-request-post.service';
 
 
 const routes: Routes = [
@@ -39,7 +41,9 @@ const routes: Routes = [
   ],
   providers: [
     MessageService,
-    DonationRequestService
+    DonationRequestService,
+    HospitalService,
+    DonationRequestPostService
   ]
 })
 export class RequestsModule { }

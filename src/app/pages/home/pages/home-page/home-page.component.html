@@ -1,5 +1,5 @@
 <div *ngIf="entity; else load">
-  <app-header [entity]="entity"></app-header>
+  <app-header [entity]="entity" [fotoUrl]="fotoUrl"></app-header>
   <app-body [entity]="entity"></app-body>
 </div>
 <ng-template #load>
