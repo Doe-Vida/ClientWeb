@@ -7,6 +7,11 @@
   gap: 10px;
   height: 80vh;
   overflow-y: auto;
+  .nothing{
+    font-weight: 900;
+    color: var(--gray-700);
+    font-size: 14px;
+  }
 }
 
 .button {

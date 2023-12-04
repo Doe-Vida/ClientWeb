@@ -8,5 +8,15 @@
       <i class="pi pi-plus" style="color: white"></i>
     </button>
   </div>
-  <app-card></app-card>
+  <div *ngFor="let post of posts">
+    <app-card
+      [post]="post"
+    ></app-card>
+  </div>
+  <div class="nothing" *ngIf="posts.length == 0">
+    <span>Sem experiências compartilhadas, seja o primeiro 😊</span>
+  </div>
+</div>
+<div *ngIf="loading">
+  <app-loading></app-loading>
 </div>
