@@ -9,7 +9,7 @@ export class CustomDataFormatPipe implements PipeTransform {
     if (value) {
       const date = new Date(value);
       const day = this.addZero(date.getUTCDate());
-      const month = this.addZero(date.getUTCMonth());
+      const month = this.addZero(date.getUTCMonth() + 1);
       const year = date.getUTCFullYear();
 
       return `${day}/${month}/${year}`;

@@ -32,6 +32,9 @@
       src="../../../../../../assets/default-avatar-icon-of-social-media-user-vector.jpg"
       alt="Usuário solicitante"
     >
+    <img *ngIf="request?.requester?.photo"
+      [src]="'data:image/jpeg;base64,' + request?.requester?.photo"
+      [alt]="request?.requester?.first_name">
     <span>{{request?.date_donation_order | customDataFormatPipe}}</span>
   </div>
 </div>
