@@ -40,8 +40,8 @@ export class SecondAptitudeTestComponent implements OnInit{
   }
 
   validateQuestions(): void {
-    const existFalseAnswer = this.hasFalseValue();
-    if(existFalseAnswer){
+    const existTrueAnswer = this.hasTrueValue();
+    if(existTrueAnswer){
       this.resourceForm.reset();
       this.showUnfitCard = true;
     }else{
@@ -51,11 +51,11 @@ export class SecondAptitudeTestComponent implements OnInit{
     }
   }
 
-  hasFalseValue(): boolean {
+  hasTrueValue(): boolean {
     for (const controlName in this.resourceForm.controls) {
       if (this.resourceForm.controls.hasOwnProperty(controlName)) {
         const control: AbstractControl | null = this.resourceForm.get(controlName);
-        if (control && control.value === false) {
+        if (control && control.value === true) {
           return true;
         }
       }

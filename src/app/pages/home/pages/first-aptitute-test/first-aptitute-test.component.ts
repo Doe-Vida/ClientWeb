@@ -40,25 +40,15 @@ export class FirstAptituteTestComponent implements OnInit{
   }
 
   validateQuestions(): void {
-    const existFalseAnswer = this.hasFalseValue();
-    if(existFalseAnswer){
-      this.resourceForm.reset();
-      this.showUnfitCard = true;
-    }else{
+    const fifthValue = this.resourceForm.get('fifth')?.value;
+    const sixthValue = this.resourceForm.get('sixth')?.value;
+
+    if (fifthValue === false && sixthValue === false) {
       this.resourceForm.reset();
       this.showSucessCard = true;
+    } else {
+      this.resourceForm.reset();
+      this.showUnfitCard = true;
     }
-  }
-
-  hasFalseValue(): boolean {
-    for (const controlName in this.resourceForm.controls) {
-      if (this.resourceForm.controls.hasOwnProperty(controlName)) {
-        const control: AbstractControl | null = this.resourceForm.get(controlName);
-        if (control && control.value === false) {
-          return true;
-        }
-      }
-    }
-    return false;
   }
 }

@@ -97,8 +97,17 @@ export class EditarComponent implements OnInit, OnDestroy{
 
   save(): void {
     this.loading = true;
-    const update = Object.assign({}, new User(), this.form.value);
-    const request = this._userService.update(update, this.entity.username).subscribe((response: BaseResult)=>{
+    this.entity = Object.assign({}, new User(), this.form.value);
+
+    if(this.form.get('sex')?.value === 'false'){
+      this.entity.sex = false;
+    }
+
+    if(this.form.get('sex')?.value === 'true'){
+      this.entity.sex = false;
+    }
+
+    const request = this._userService.update(this.entity, this.entity.username).subscribe((response: BaseResult)=>{
       if(response.success){
         this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Conta atualizada' });
         setTimeout(() => {
